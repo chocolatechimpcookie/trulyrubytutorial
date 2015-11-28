@@ -29,3 +29,6 @@ Other colors:
 3 darkest: #E2E2DB
 
 ^This is the exact same color scheme as the official Ruby site, thought it would make it familiar.
+
+Any overall fonts?
+sans serif?
