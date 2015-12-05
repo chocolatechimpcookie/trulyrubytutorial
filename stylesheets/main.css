@@ -1,7 +1,10 @@
 /* What exactly do I want this to look like? */
 
 
-
+.test
+{
+	display:block;
+}
 
 .top_menu
 {
@@ -9,8 +12,7 @@
 	padding:0;
 	margin:0;
 	border:0;
-	position:fixed;
-	background:#EBEBE4;
+	background:#E2E2DB;
 	z-index:2;
 	width:auto;
 }
@@ -38,7 +40,15 @@
 	color:red;
 }
 
+.greyback
+{
+	background-color:#EBEBE4;
+}
 
+.whiteback
+{
+	background-color:white;
+}
 
 .link_lesson
 {

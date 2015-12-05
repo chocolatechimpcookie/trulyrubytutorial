@@ -6,7 +6,7 @@
 	<link rel="stylesheet" type="text/css" href="stylesheets/main.css">
 	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 
@@ -20,66 +20,86 @@
 <body>
 
 <div class="container">
-<div class=row">
-<ul class="nav nav-pills top_menu">
-	<li role="presentation"><a href="index.html" class="nav-brand"><img class="ruby_size" alt="Brand" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png" /> </a></li>
-	<li role="presentation"><a href="html/about.html">About</a></li>
-	<li role="presentation" class="dropdown">
-	<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chapter 1<span class="caret"></span></a> 	
-		<ul class="dropdown-menu">
-			<li><a href="html/ch1p1.html">Part 1</a></li>
-			<li><a href="html/ch1p2.html">Part 2</a></li>
-			<li><a href="html/ch1p3.html">Part 3</a></li>
-		</ul>
-	</li>
-	<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Chapter 2<span class="caret"></span></a>
-		<ul class="dropdown-menu">
-			<li><a href="html/ch2p1.html">Part 1</a></li>
-			<li><a href="html/ch2p2.html">Part 2</a></li>
-			<li><a href="html/ch2p3.html">Part 3</a></li>
-		</ul>
-	<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Chapter 3<span class="caret"></span></a>
-		<ul class="dropdown-menu">
-			<li><a href="html/ch3p1.html">Part 1</a></li>
-			<li><a href="html/ch3p2.html">Part 2</a></li>
-			<li><a href="html/ch3p3.html">Part 3</a></li>
-		</ul>
-</ul>
-<br><br>
+	<div class="row">
+	<div class="col-md-12"
+	<div class="page-header"><h2 class="test">Truly Ruby<small> Unlock Your Inner Gem </small></h2></div>
+	<ul class="nav nav-pills top_menu">
+		<li role="presentation"><a href="index.html" class="nav-brand"><img class="ruby_size" alt="Brand" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png" /> </a></li>
+		<li role="presentation"><a href="html/about.html">About</a></li>
+		<li role="presentation" class="dropdown">
+		<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chapter 1: Newly Ruby<span class="caret"></span></a> 	
+			<ul class="dropdown-menu">
+				<li><a href="html/ch1p1.html">Part 1</a></li>
+				<li><a href="html/ch1p2.html">Part 2</a></li>
+				<li><a href="html/ch1p3.html">Part 3</a></li>
+			</ul>
+		</li>
+		<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Chapter 2: Duly Ruby<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="html/ch2p1.html">Part 1</a></li>
+				<li><a href="html/ch2p2.html">Part 2</a></li>
+				<li><a href="html/ch2p3.html">Part 3</a></li>
+			</ul>
+		<li role="presentation" class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button">Chapter 3: Truly Ruby<span class="caret"></span></a>
+			<ul class="dropdown-menu">
+				<li><a href="html/ch3p1.html">Part 1</a></li>
+				<li><a href="html/ch3p2.html">Part 2</a></li>
+				<li><a href="html/ch3p3.html">Part 3</a></li>
+			</ul>
+	</ul>
 
-<!-- floating menu has transparency, fill it? -->
-
-
-	<h1>The Way to Code Enlightenment Is Through Ruby</h1>
+	</div>
 	
-	<p>Welcome to Truly Ruby! This tutorial is designed to help you unlock your programming potential through the incredibly powerful Ruby programming language.
-	If you dare embark on this harrowing journey, you will discover that Ruby is the answer to many problems in the life of a developer. So join us, learn the dark (and fun)
-	secrets behind this remarkable language and elevate your coding self to the level of <em class="red">Truly Ruby</em>!</p>
-	
-	<h3>Learn Ruby. Become Ruby.</h3>
-	
-	<p>To become a Ruby Master you must become one with Ruby. "What exactly does that mean?" you may ask yourself. Perhaps it will become clearer if you answer
-	this question: Have you ever wished that a language could just <em>read your mind</em>? You know, accept a train of thought as input? Maybe technology hasn't
-	granted us 'Matrix'-style computers but satisfying this desire is where Ruby truly shines. By being intuitive and flexible Ruby allows you to put your thoughts
-	into your programs. If we want to put something into our program we can use the <strong style="font-family: Menlo, Courier, serif">puts</strong> command. <code>puts</code> (short for 'put string') is a way we get Ruby to display something on the screen. <code>puts</code> is very much like the related command <code>print</code>, except <code>puts</code> adds a newline after the result and <code>print</code> does not. Now with that in mind, consider the following line of code:</p>
-	
-	<img src="TEMP1"/><br>
-	
-	<p>If we were to write out a sentence explaining what action this code snippet performs, it would read very much like the code itself. "Display <code>'I am but an object in a sea of Ruby code.'</code> on the screen <code>4</code> times." Simple and intuitive. Just like coding should be.</p>
-	<p>Remember when I said Ruby can read your mind? This is an excellent example of how the intuitive syntax makes it feel as though Ruby really could. As ideas for your code pop up, Ruby is there to represent the thought behind the code. Often times you can read Ruby code aloud and get a good idea of what that piece of code is supposed to do. Let's look at another snippet of code: </p>
-	
-	<img src="TEMP2"/><br>
-	
-	<p>As before it is easy to understand what this code does. We could say (albeit a little awkwardly) "<code>best_actress</code> is <code>'Jennifer Lawrence'</code> unless 'Brie Larson' includes 'son'." So unless Brie Larson gets a name change before the Academy Awards, Jennifer Lawrence probably won't need to clear more space off of her mantle for another gold statue.</p>
-	
-	<p>We can translate our thoughts into Ruby code easily because Ruby was designed to be easy on the programmer. The life of a programmer can be hard. Working long hours staring at a computer screen endlessly typing page after page. Knowing myriad languages, all with their own quirky syntax (some more intuitive than others). That's why Japanese developer Yukihiro 'Matz' Matsumoto developed Ruby in 1995. He focused first on developer needs and convenience rather than machine requirements. Matz once said, <em>"Programmers often feel joy when they can concentrate on the creative side of programming. So Ruby is designed to make programmers happy."</em> By making coding easier and more fun, Ruby allows developers to relax and do more cool things with their code. And who doesn't love cool things?</p>
-	
-	<h1>With the First Step, The Path Is Formed</h1>
-	
-	<p>Enough tomfoolery, now begins your journey toward Code Enlightenment. First you will become <em>Newly Ruby</em> as you learn about objects, data types, methods, and control flow. Then to ascend to <em>Duly Ruby</em> you must discover the wonders of arrays and hashes and how to navigate them by writing your own methods. Finally, to reach your goal you must journey back to your origins and unlock the hidden power of classes and objects. Then and only then can you become <em>Truly Ruby</em>...</p>
-	
-	<a class="link_lesson" href="#">Come my child to Lesson 1: <i class="red">Newly Ruby</i></a>
-
+		<!-- floating menu has transparency, fill it? -->
+		<div class="col-md-8">
+			
+			<div class="jumbotron col-md-12">
+			<h2>The Way to Code Enlightenment Is Through <span class="red">Ruby</span></h2>
+			</div>
+			
+			<br><p>Welcome to Truly Ruby! This tutorial is designed to help you unlock your programming potential through the incredibly powerful Ruby programming language.
+			If you dare embark on this harrowing journey, you will discover that Ruby is the answer to many problems in the life of a developer. So join us, learn the dark (and fun)
+			secrets behind this remarkable language and elevate your coding self to the level of <em class="red">Truly Ruby</em>!</p>
+			
+			<h3 class="page-header">Learn Ruby. Become Ruby.</h3>
+			
+			<p>To become a Ruby Master you must become <em>one</em> with Ruby. <blockquote>"What exactly does that mean?"</blockquote> You may ask yourself. Perhaps it will become clearer if you answer
+			this question: Have you ever wished that a language could just <em>read your mind</em>? You know, accept a train of thought as input? Maybe technology hasn't
+			granted us 'Matrix'-style computers but satisfying this desire is where Ruby truly shines. By being intuitive and flexible Ruby allows you to put your thoughts
+			into your programs. If we want to put something into our program we can use the <strong style="font-family: Menlo, Courier, serif">puts</strong> command.
+			<code>puts</code> (short for 'put string') is a way we get Ruby to display something on the screen. <code>puts</code> is very much like the related command
+			<code>print</code>, except <code>puts</code> adds a newline after the result and <code>print</code> does not. Now with that in mind, consider the following line of code:</p>
+			
+			<img src="TEMP1"/><br>
+			
+			<p>If we were to write out a sentence explaining what action this code snippet performs, it would read very much like the code itself. "Display <code>
+			'I am but an object in a sea of Ruby code.'</code> on the screen <code>4</code> times." Simple and intuitive. Just like coding should be.</p>
+			<p>Remember when I said Ruby can read your mind? This is an excellent example of how the intuitive syntax makes it feel as though Ruby really could.
+			As ideas for your code pop up, Ruby is there to represent the thought behind the code. Often times you can read Ruby code aloud and get a good idea of
+			what that piece of code is supposed to do. Let's look at another snippet of code: </p>
+			
+			<img src="TEMP2"/><br>
+			
+			<p>As before it is easy to understand what this code does. We could say (albeit a little awkwardly) "<code>best_actress</code> is <code>'Jennifer Lawrence'</code>
+			unless 'Brie Larson' includes 'son'." So unless Brie Larson gets a name change before the Academy Awards, Jennifer Lawrence probably won't need to clear more space
+			off of her mantle for another gold statue.</p>
+			
+			<p>We can translate our thoughts into Ruby code easily because Ruby was designed to be easy on the programmer. The life of a programmer can be hard. Working long
+			hours staring at a computer screen endlessly typing page after page. Knowing myriad languages, all with their own quirky syntax (some more intuitive than others).
+			That's why Japanese developer Yukihiro 'Matz' Matsumoto developed Ruby in 1995. He focused first on developer needs and convenience rather than machine requirements.
+			Matz once said, <blockquote>"Programmers often feel joy when they can concentrate on the creative side of programming. So Ruby is designed to make programmers happy."</blockquote>
+			By making coding easier and more fun, Ruby allows developers to relax and do more cool things with their code. And who doesn't love cool things?</p>
+			
+			<h3 class="page-header">With the First Step, The Path Is Formed</h3 class="page-header">
+			
+			<p>Enough tomfoolery, now begins your journey toward Code Enlightenment. First you will become <em>Newly Ruby</em> as you learn about objects, data types, methods,
+			and control flow. Then to ascend to <em>Duly Ruby</em> you must discover the wonders of arrays and hashes and how to navigate them by writing your own methods.
+			Finally, to reach your goal you must journey back to your origins and unlock the hidden power of classes and objects. Then and only then can you become <em>Truly Ruby</em>...</p>
+			
+			<a class="link_lesson" href="#">Come my child to Chapter 1: <i class="red">Newly Ruby</i></a><br><br>
+		</div>
+	</div>
+</div>
 
 
 </body>
