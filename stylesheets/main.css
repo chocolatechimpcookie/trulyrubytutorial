@@ -1,10 +1,7 @@
 /* What exactly do I want this to look like? */
 
 
-.test
-{
-	display:block;
-}
+
 
 .top_menu
 {
@@ -17,16 +14,46 @@
 	width:auto;
 }
  
-.top_menu > li
+.top_menu li
 {
 	margin: 5px 2px 0px 2px;
 }
 
-.top_menu > a
+.top_menu > li > ul
 {
-	background: #E2E2DB;
-	
+	background:#E2E2DB;
 }
+
+.top_menu a:hover
+{
+	color:red;
+}
+
+.top_menu a:active
+{
+	color:red;
+}
+
+.top_menu a:checked
+{
+	color:red;
+}
+
+.top_menu a:after
+{
+	color:red;
+}
+
+.top_menu li > ul a:hover
+{
+	color:red;
+}
+
+
+/* Why can't I use css to change the a's inside li > ul through css and
+ * have to use a span?
+*/
+
 .ruby_size
 {
 	width:22px;
@@ -35,10 +62,7 @@
 
 
 
-.red
-{
-	color:red;
-}
+
 
 .greyback
 {
@@ -54,6 +78,29 @@
 {
 	text-decoration: none;
 }
+
+.red
+{
+	color:red;
+}
+
+.darkred2
+{
+ color:#B11306
+}
+
+.midred
+{
+	color:#CC342D;
+}
+
+.darkred
+{
+	color:#900E05;
+}
+
+
+
 
 body
 {
