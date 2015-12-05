@@ -44,10 +44,7 @@
 	color:red;
 }
 
-.top_menu li > ul a:hover
-{
-	color:red;
-}
+
 
 
 /* Why can't I use css to change the a's inside li > ul through css and

@@ -30,11 +30,16 @@
 					
 					<nav class="navbar navbar-default">
 					<ul class="nav nav-pills top_menu">
+
 						<li role="presentation">
-							<a href="index.html" class="nav-brand"><img class="ruby_size" alt="Brand" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png" /> </a></li>
+							<a href="index.html" class="nav-brand">
+							<img class="ruby_size" alt="Brand" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Ruby_logo.svg/198px-Ruby_logo.svg.png" /> </a>
+						</li>
+
 						<li role="presentation">
 							<a href="html/about.html" class="midred">About</a></li>
-						<li role="presentation" class="dropdown">
+						
+						<li role="presentation" class="dropdown">	
 						<a class="dropdown-toggle midred" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Chapter 1: Newly Ruby<span class="caret"></span></a> 	
 							<ul class="dropdown-menu">
 								<li><a href="html/ch1p1.html"><span class="midred">Part 1</span></a></li>
@@ -42,6 +47,7 @@
 								<li><a href="html/ch1p3.html"><span class="midred">Part 3</span></a></li>
 							</ul>
 						</li>
+						
 						<li role="presentation" class="dropdown">
 							<a class="dropdown-toggle midred" data-toggle="dropdown" href="#" role="button">Chapter 2: Duly Ruby<span class="caret"></span></a>
 							<ul class="dropdown-menu">
@@ -49,13 +55,15 @@
 								<li><a href="html/ch2p2.html"><span class="midred">Part 2</span></a></li>
 								<li><a href="html/ch2p3.html"><span class="midred">Part 3</span></a></li>
 							</ul>
-						<li role="presentation red" class="dropdown">
+						</li>
+						<li role="presentation" class="dropdown">
 							<a class="dropdown-toggle midred" data-toggle="dropdown" href="#" role="button">Chapter 3: Truly Ruby<span class="caret"></span></a>
 							<ul class="dropdown-menu">
-								<li><a href="html/ch3p1.html" <span class="midred">Part 1</span></a></li>
-								<li><a href="html/ch3p2.html" <span class="midred">Part 2</span></a></li>
-								<li><a href="html/ch3p3.html" <span class="midred">Part 3</span></a></li>
+								<li><a href="html/ch3p1.html"> <span class="midred">Part 1</span></a></li>
+								<li><a href="html/ch3p2.html"> <span class="midred">Part 2</span></a></li>
+								<li><a href="html/ch3p3.html"> <span class="midred">Part 3</span></a></li>
 							</ul>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -63,11 +71,11 @@
 		
 		<div class="row">
 
-				<div class="jumbotron col-md-6">
-				<h2>The Way to Code Enlightenment Is Through <span class="midred">Ruby</span></h2>
+				<div class="col-md-4">
+				<blockquote>The Way to Code Enlightenment Is Through Ruby</blockquote>
 				</div>
 				
-				<div class=" col-md-6">
+				<div class=" col-md-8">
 				<p>Welcome to Truly Ruby! This tutorial is designed to help you unlock your programming potential through the incredibly powerful Ruby programming language.
 				If you dare embark on this harrowing journey, you will discover that Ruby is the answer to many problems in the life of a developer. So join us, learn the dark (and fun)
 				secrets behind this remarkable language and elevate your coding self to the level of <em class="lightred">Truly Ruby</em>!</p>
@@ -75,33 +83,52 @@
 		</div>
 		
 		<!-- the alternative is to have it all centered -->
+		<!-- I can always put images to the right -->
 		
 		
-		<div class="col-md-10 row">
 				
 				
-				<h3 class="page-header">Learn Ruby. Become Ruby.</h3>
+		<h3 class="page-header">Learn Ruby. To become a Ruby Master you must become <em>one</em> with Ruby.</h3>
 				
-				<p>To become a Ruby Master you must become <em>one</em> with Ruby. <blockquote>"What exactly does that mean?"</blockquote> You may ask yourself. Perhaps it will become clearer if you answer
-				this question: Have you ever wished that a language could just <em>read your mind</em>? You know, accept a train of thought as input? Maybe technology hasn't
-				granted us 'Matrix'-style computers but satisfying this desire is where Ruby truly shines. By being intuitive and flexible Ruby allows you to put your thoughts
-				into your programs. If we want to put something into our program we can use the <strong style="font-family: Menlo, Courier, serif">puts</strong> command.
-				<code>puts</code> (short for 'put string') is a way we get Ruby to display something on the screen. <code>puts</code> is very much like the related command
-				<code>print</code>, except <code>puts</code> adds a newline after the result and <code>print</code> does not. Now with that in mind, consider the following line of code:</p>
+				<div class="row">
+					
+					<div class="col-md-4"><blockquote> You may ask yourself "What exactly does that mean?"</blockquote></div>
+	
+					<div class="col-md-8"><p>To become a Ruby Master you must become <em>one</em> with Ruby. "What exactly does that mean?" You may ask yourself. Perhaps it will become clearer if you answer
+					this question: Have you ever wished that a language could just <em>read your mind</em>? You know, accept a train of thought as input? Maybe technology hasn't
+					granted us 'Matrix'-style computers but satisfying this desire is where Ruby truly shines. By being intuitive and flexible Ruby allows you to put your thoughts
+					into your programs. If we want to put something into our program we can use the <strong style="font-family: Menlo, Courier, serif">puts</strong> command.
+					<code>puts</code> (short for 'put string') is a way we get Ruby to display something on the screen. <code>puts</code> is very much like the related command
+					<code>print</code>, except <code>puts</code> adds a newline after the result and <code>print</code> does not. </p></div>
+				</div>
 				
-				<img src="TEMP1"/><br>
 				
-				<p>If we were to write out a sentence explaining what action this code snippet performs, it would read very much like the code itself. "Display <code>
-				'I am but an object in a sea of Ruby code.'</code> on the screen <code>4</code> times." Simple and intuitive. Just like coding should be.</p>
-				<p>Remember when I said Ruby can read your mind? This is an excellent example of how the intuitive syntax makes it feel as though Ruby really could.
-				As ideas for your code pop up, Ruby is there to represent the thought behind the code. Often times you can read Ruby code aloud and get a good idea of
-				what that piece of code is supposed to do. Let's look at another snippet of code: </p>
+				<div class="row">
+					<div class="col-md-4">
+					<p>Now with that in mind, consider the following line of code:</p>
+					<img src="TEMP1"/><br>
+					</div>
+					
+					<div class="col-md-8">
+					<p>If we were to write out a sentence explaining what action this code snippet performs, it would read very much like the code itself. "Display <code>
+					'I am but an object in a sea of Ruby code.'</code> on the screen <code>4</code> times." Simple and intuitive. Just like coding should be.</p>
+					<p>Remember when I said Ruby can read your mind? This is an excellent example of how the intuitive syntax makes it feel as though Ruby really could.
+					As ideas for your code pop up, Ruby is there to represent the thought behind the code. Often times you can read Ruby code aloud and get a good idea of
+					what that piece of code is supposed to do.  </p>
+					</div>
+				</div>
 				
-				<img src="TEMP2"/><br>
-				
-				<p>As before it is easy to understand what this code does. We could say (albeit a little awkwardly) "<code>best_actress</code> is <code>'Jennifer Lawrence'</code>
-				unless 'Brie Larson' includes 'son'." So unless Brie Larson gets a name change before the Academy Awards, Jennifer Lawrence probably won't need to clear more space
-				off of her mantle for another gold statue.</p>
+				<div class="row">
+					<div class="col-md-4">
+					<p>Let's look at another snippet of code:</p>	
+					<img src="TEMP2"/><br>
+					</div>
+					
+					<div class="col-md-8">
+					<p>As before it is easy to understand what this code does. We could say (albeit a little awkwardly) "<code>best_actress</code> is <code>'Jennifer Lawrence'</code>
+					unless 'Brie Larson' includes 'son'." So unless Brie Larson gets a name change before the Academy Awards, Jennifer Lawrence probably won't need to clear more space
+					off of her mantle for another gold statue.</p>
+					</div>
 				
 				<p>We can translate our thoughts into Ruby code easily because Ruby was designed to be easy on the programmer. The life of a programmer can be hard. Working long
 				hours staring at a computer screen endlessly typing page after page. Knowing myriad languages, all with their own quirky syntax (some more intuitive than others).
@@ -115,9 +142,9 @@
 				and control flow. Then to ascend to <em class="lightred">Duly Ruby</em> you must discover the wonders of arrays and hashes and how to navigate them by writing your own methods.
 				Finally, to reach your goal you must journey back to your origins and unlock the hidden power of classes and objects. Then and only then can you become <em class="lightred">Truly Ruby</em>...</p>
 				
-				<a class="link_lesson midred" href="#">Come my child to Chapter 1: <i class="lightred">Newly Ruby</i></a><br><br>
+				<div class="jumbotron"><h2><a class="link_lesson midred" href="html/ch1p1.html">Come my child to Chapter 1: <i class="lightred">Newly Ruby</i></a></h2></div>
 				</div>
-	</div>
+	
 	</div>
 
 </body>
