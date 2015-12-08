@@ -116,10 +116,10 @@
 		
 		<h3 class="page-header">Flexibility Is Key</h3>
 		
-		<div class="codeblock">puts 'Ziggy piggy!' * 4<code class="code"></code></div>
+		<div class="codeblock">puts 'Ziggy piggy!' * 4<code class="code"></code></div><br><br>
 		<p>As you recall, in Ruby everything is treated as an object. So when you use an operator like <code>*</code> with the operands <code>'Ziggy piggy!'</code> and <code>4</code>, Ruby reads it as "print four of this object to the screen". It doesn't really matter what that object is. In cases where the object is a number like <code>6</code>, the line <code>6 * 4</code> means "print four of the number 6 to the screen" which is equivalent to printing <code>6 + 6 + 6 + 6</code>, or <code>24</code>. Ruby evaluates code from left to right, one line at a time so the order of the operands matters greatly. Compare this code to the above example:</p>
 		
-		<div class="codeblock"><code class="code">puts 4 * 'Ziggy piggy!'</code></div>
+		<div class="codeblock"><code class="code">puts 4 * 'Ziggy piggy!'</code></div><br><br>
 		
 		<p>Ruby can't multiply things by strings so this order doesn't work. By making everything an object, there are less restrictions in the configuration of Ruby. In fact, there is a well-known Ruby mantra: "Choose Convention Over Configuration". The language itself does not require very much regarding typing and naming of variabels. By not requiring strong data typing for variables, the developer has more freedom for creativity. But if you choose to follow the many well-established Ruby conventions, your code can be just as powerful as more restrictive languages. As you travel further down the path to Code Englightenment, you will discover ways to use those conventions to supercharge your programs.</p>
 		
@@ -144,7 +144,7 @@
 		
 		<p>Will output <code>This is a string variable</code> and <code>28</code> respectively.</p>
 		
-		<div class="codeblock"><code class="code">puts var_name * 2</code></div>
+		<div class="codeblock"><code class="code">puts var_name * 2</code></div><br><br>
 						
 		
 		<p>Will output <code>This is a string variableThis is a string variable</code> with no spaces since we didn't add any in there. The same basic rules of string arithmetic apply here as well.</p>
@@ -166,7 +166,7 @@
 		<div class="codeblock"><code class="code">
 		color = 'orange'<br>
 		puts "My favorite color is #{color}"<br>
-		</code></div>
+		</code></div><br><br>
 
 						
 		
@@ -189,12 +189,12 @@
 		puts "Actually that's pretty old for Westeros."<br>
 		puts "He was promoted to #{title} of the Watch last I heard. "<br>
 		puts "I hope #{title} #{name} and his #{num_of_brothers + num_of_sisters} siblings get to see #{home} again."	
-		</code></div>
+		</code></div><br><br>
 		
 		<p>Our program starts by creating some variables and assigning them values, then it <code>puts</code> strings that reference those values using the <code>#{variable}</code> form. This is what Ruby outputs from the program.</p>
 		
 		<!--<img src="TEMP 18 Result">-->
-		<div class="codeblock"><code class="code"></code></div>
+		<div class="codeblock"><code class="code"></code></div><br><br>
 <!--		what				-->
 		
 		<h3 class="page-header">Methods</h3>
@@ -202,7 +202,7 @@
 		<p><strong>Methods</strong> are actions we make on objects. You have seen them already. Things like <code>puts</code>, <code>.length</code>, and <code>.capitalize</code> are all Ruby methods. Most Ruby methods make use of the dot syntax to connect methods and objects. Methods can contain lowercase letters, underscores, and question and exclamation marks. Those last two are for special methods we will talk about next lesson.</p>
 		
 		<!--<img src="TEMP 20">-->
-		<div class="codeblock"><code class="code">puts 'I want to believe.'.length</code></div>
+		<div class="codeblock"><code class="code">puts 'I want to believe.'.length</code></div><br><br>
 						
 		
 		<p>This code outputs the character length of the string, which in this case is 18. Methods can sometimes be chained together like so:</p>
@@ -211,7 +211,7 @@
 		<div class="codeblock"><code class="code">
 			email.greeting<br>
 			email.greeting.salutation
-		</code></div>
+		</code></div><br><br>
 		
 
 		

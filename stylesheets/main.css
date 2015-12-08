@@ -1,6 +1,13 @@
 /* What exactly do I want this to look like? */
 
-
+.adkins
+{
+    height: 600px;
+    width: 455px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}   
 
 .codeblock
 {
