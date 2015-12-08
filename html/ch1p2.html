@@ -19,11 +19,12 @@
 </head>
 
 
-<body>
-	
+<body>				
+<!--	inside container is inside a row and a col-xs-12, everything else can be nested at will-->
+
 <div class="container">	
 	<div class="row">
-		<div class="col-md-12">
+	<div class="col-xs-12">
 				
 				<!-- Why does 90% and lower have the top half get absorbed by the other color? -->
 				
@@ -71,39 +72,154 @@
 		</div>
 	</div>
 	
+	<div class="row">
+	<div class="col-xs-12">	
 	
 		<h3 class="page-header">Chapter 1 Part 2</h3>
-		<div class="row">
+		
 
-				<div class="col-md-4">
-				</div>
-				
-				<div class=" col-md-8">
-				
-				</div>
+			<!--		<div class="col-xs-4">-->
+			<!--		</div>-->
+			<!--		-->
+			<!--		<div class=" col-xs-8">-->
+			<!--		-->
+			<!--		</div>-->
+			<!--</div>-->
+			<!---->
+			<!---->
+			<!---->
+			<!--<div class="row">-->
+			<!---->
+			<!--		<div class="col-xs-4">-->
+			<!--		</div>-->
+			<!--		-->
+			<!--		<div class=" col-xs-8">-->
+			<!--		-->
+			<!--		</div>-->
+			<!--</div>-->
+			
+			<!-- the alternative is to have it all centered -->
+			<!-- I can always put images to the right -->
+		
+		<p>There are some formulations of strings and numbers don't interact well.</p>
+
+		<div class="codeblock">
+			<code class="code">
+			puts 'Mulder' * 'Scully'<br>
+			puts 8 - '2'<br>
+			puts 'Fab' + 4<br>
+			puts '6' * '7'<br>
+			</code>
 		</div>
 		
+		<p>To better understand why some of these mixed type lines of code work and some don't, we need to look inside of Ruby to see what is happening. In the first example, we are trying to take the string <code>'Mulder'</code> and multiply it <code>'Scully'</code> number of times. This is patently ridiculous so it's no surprise that Ruby can't make heads or tales of it. In the third example, we see that though different data types can work together, they cannot be combined. The second example is a little trickier. Here we are taking the <em>number</em> <code>8</code> and trying to subtract from it the <em>digit</em> <code>'2'</code>. In all programming languages it is important to understand this difference. </p>
 		
+		<h3 class="page-header">Flexibility Is Key</h3>
 		
-		<div class="row">
-
-				<div class="col-md-4">
-				</div>
-				
-				<div class=" col-md-8">
-				
-				</div>
+		<div class="codeblock">puts 'Ziggy piggy!' * 4<code class="code"></code></div>
+		<p>As you recall, in Ruby everything is treated as an object. So when you use an operator like <code>*</code> with the operands <code>'Ziggy piggy!'</code> and <code>4</code>, Ruby reads it as "print four of this object to the screen". It doesn't really matter what that object is. In cases where the object is a number like <code>6</code>, the line <code>6 * 4</code> means "print four of the number 6 to the screen" which is equivalent to printing <code>6 + 6 + 6 + 6</code>, or <code>24</code>. Ruby evaluates code from left to right, one line at a time so the order of the operands matters greatly. Compare this code to the above example:</p>
+		
+		<div class="codeblock"><code class="code">puts 4 * 'Ziggy piggy!'</code></div>
+		
+		<p>Ruby can't multiply things by strings so this order doesn't work. By making everything an object, there are less restrictions in the configuration of Ruby. In fact, there is a well-known Ruby mantra: "Choose Convention Over Configuration". The language itself does not require very much regarding typing and naming of variabels. By not requiring strong data typing for variables, the developer has more freedom for creativity. But if you choose to follow the many well-established Ruby conventions, your code can be just as powerful as more restrictive languages. As you travel further down the path to Code Englightenment, you will discover ways to use those conventions to supercharge your programs.</p>
+		
+		<h3 class="page-header">Variables</h3>
+		
+		<p>Of course we want to store these numbers and strings for use in our programs, and for that we assign them names, or <strong>variables</strong>. Ruby variables can be any sequence of letters, numbers, and underscores so long as the variable name begins with a lowercase letter. Because of this there is a widespread convention to use lower camelCase for all variable names. Direct your gaze to the next code examples:</p>
+		
+		<div class="codeblock"><code class="code">
+		var_name = 'This is a string variable'<br>
+		days_since_outbreak = 28<br>
+		</code>
 		</div>
 		
-		<!-- the alternative is to have it all centered -->
-		<!-- I can always put images to the right -->
+		<p>In the first example, we have a name <code>var_name</code> and we use it to point at the string <code>'This is a string variable'</code> while our second example sets the variable name to an integer value of <code>28</code>. Now that we have these values safe and sound, we can play around with them a little starting with printing.</p>
 		
+		<div class="codeblock">
+			<code class="code">
+			puts var_name<br>
+			puts days_since_outbreak<br>
+			</code>
+		</div>
 		
+		<p>Will output <code>This is a string variable</code> and <code>28</code> respectively.</p>
+		
+		<div class="codeblock"><code class="code">puts var_name * 2</code></div>
+						
+		
+		<p>Will output <code>This is a string variableThis is a string variable</code> with no spaces since we didn't add any in there. The same basic rules of string arithmetic apply here as well.</p>
+		
+		<img src="TEMP 17">
+		<div class="codeblock">
+			<code class="code">
+			days_before_rescue = days_since_outbreak + 31<br>
+			puts days_before_rescue<br>
+			</code>
+		</div>
+						
+		
+		<p>In this example, we create a new variable called <code>days_before_rescue</code> and set it to the value of <code>days_since_outbreak</code>(which we just set to <code>28</code>) plus <code>31</code>. Then we print it and get an output of <code>59</code>.</p>
+		
+		<p>We also want the ability to display variables within strings to make using the data from our programs much easier. To do this Ruby uses the <code>#{variable}</code> syntax to reference variables from within strings. Take a look:</p>
+		
+		<!--<img src="TEMP 19">-->
+		<div class="codeblock"><code class="code">
+		color = 'orange'<br>
+		puts "My favorite color is #{color}"<br>
+		</code></div>
+
+						
+		
+		<p>The above code will output <code>My favorite color is orange</code>. Simple. So far we've been holding your hand. Now you know more than enough Ruby to write a fun little program.</p>
+		
+		<!--<img src="TEMP 18">-->
+		<div class="codeblock">
+		name = 'Jon Snow'<br>
+		age = 20<br>
+		father = 'Ned Stark'<br>
+		home = 'Winterfell'<br>
+		title = 'Lord Commander'<br>
+		num_of_brothers = 1<br>
+		num_of_sisters = 2<br>
+		puts "Let's talk about #{name}."<br>
+		puts "He is the son of #{father}, former lord of #{home}."<br>
+		puts "He's #{age} years old."<br>
+		puts "Actually that's pretty old for Westeros."<br>
+		puts "He was promoted to #{title} of the Watch last I heard. "<br>
+		puts "I hope #{title} #{name} and his #{num_of_brothers + num_of_sisters} siblings get to see #{home} again."	
+		<code class="code"></code></div>
+		
+		<p>Our program starts by creating some variables and assigning them values, then it <code>puts</code> strings that reference those values using the <code>#{variable}</code> form. This is what Ruby outputs from the program.</p>
+		
+		<!--<img src="TEMP 18 Result">-->
+		<div class="codeblock"><code class="code"></code></div>
+<!--		what				-->
+		
+		<h3 class="page-header">Methods</h3>
+		
+		<p><strong>Methods</strong> are actions we make on objects. You have seen them already. Things like <code>puts</code>, <code>.length</code>, and <code>.capitalize</code> are all Ruby methods. Most Ruby methods make use of the dot syntax to connect methods and objects. Methods can contain lowercase letters, underscores, and question and exclamation marks. Those last two are for special methods we will talk about next lesson.</p>
+		
+		<!--<img src="TEMP 20">-->
+		<div class="codeblock"><code class="code">puts 'I want to believe.'.length</code></div>
+						
+		
+		<p>This code outputs the character length of the string, which in this case is 18. Methods can sometimes be chained together like so:</p>
+		
+		<!--<img src="TEMP 21">-->
+		<div class="codeblock"><code class="code">
+			email.greeting<br>
+			email.greeting.salutation
+		</code></div>
 		
 
+		
+					
 	
-	
-	
+		
+		<div class="jumbotron"><h2><a class="link_lesson midred" href="ch1p3.html">Come my child to Chapter 1: <i class="lightred">Part 3</i></a></h2></div>
+	</div>
+	</div>
+</div>
 	
 	
 </div>

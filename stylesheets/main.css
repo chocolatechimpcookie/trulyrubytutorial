@@ -2,7 +2,18 @@
 
 
 
+.codeblock
+{
+    background-color:#EBEBE4;
+    width:auto;
+    overflow:scroll;    
+    padding:11px;
+}
 
+.code
+{
+	
+}
 .top_menu
 {
 	

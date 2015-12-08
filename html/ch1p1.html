@@ -23,7 +23,7 @@
 	
 <div class="container">	
 	<div class="row">
-		<div class="col-md-12">
+	<div class="col-xs-12">
 				
 				<!-- Why does 90% and lower have the top half get absorbed by the other color? -->
 				
@@ -71,43 +71,106 @@
 		</div>
 	</div>
 	
-	
+	<div class="row">
+	<div class="col-xs-12">	
 		<h3 class="page-header">Chapter 1 Part 1</h3>
-		<div class="row">
-
-				<div class="col-md-4">
-				</div>
-				
-				<div class=" col-md-8">
-				
-				</div>
-		</div>
+		
+		
+		<!--		<div class="col-xs-4">-->
+		<!--		</div>-->
+		<!--		-->
+		<!--		<div class=" col-xs-8">-->
+		<!--		-->
+		<!--		</div>-->
+		<!--</div>-->
+		<!---->
+		<!---->
+		<!---->
+		<!--<div class="row">-->
+		<!---->
+		<!--		<div class="col-xs-4">-->
+		<!--		</div>-->
+		<!--		-->
+		<!--		<div class=" col-xs-8">-->
+		<!--		-->
+		<!--		</div>-->
+		<!--</div>-->
 		
 		
 		
-		<div class="row">
-
-				<div class="col-md-4">
-				</div>
-				
-				<div class=" col-md-8">
-				
-				</div>
-		</div>
 		
-		<!-- the alternative is to have it all centered -->
-		<!-- I can always put images to the right -->
+		<h1>And so the journey begins...</h1>
+		
+		<h3>Objects and Data Types</h3>
+		
+		<p>In today's world, Object-Oriented Programming is pervasive but every object-oriented language is different in what it are objects how it treats them.
+		This can get confusing so you'll be happy to hear that, in Ruby, <strong style="color:red">EVERYTHING</strong> is an object. Take a look here:</p>
+		
+		<div class="codeblock"><code class="code">puts 'underpants'.length</code></div>
+						
+		
+		<p>So we have this word <code>'underpants'</code> and we have this new thing <code>.length</code> as well. If we run this simple program, Ruby will output <code>10</code>. That's because the <strong>object</strong> <code>'underpants'</code> has a length of <code>10</code> characters.</p>
+		
+		<div class="codeblock"><code class="code">puts 'nirvana'.capitalize</code></div>
+					
+	
+		<p>In this example, try to think what Ruby will display on the screen. If you were thinking <code>Nirvana</code> then you would be correct. Both <code>.length</code> and <code>.capitalize</code> are called <strong>methods</strong>. Methods are actions by objects. So when the method <code>.length</code> acts on the object <code>'underpants'</code>, Ruby checks the length of the object and gives us the resulting <code>10</code>. We will learn more about methods later in this lesson.  We will also return to objects in Ruby in Lesson 3 after you have become <em>Duly Ruby</em>.</p>
+		
+		<h3>Numbers</h3>
+		
+		<p>Ruby is capable of doing a lot of things without any special configuration, like arithmetic. Let's start out with something simple: <code>2 + 2</code></p>
+		
+		<div class="codeblock"><code class="code">puts 2 + 2</code></div>
+						
+		<p>This program <code>puts</code> the result of the expression <code>2 + 2</code> which Ruby has automatically calculated. As far as we're concerned, the code above is the same as <code>puts 4</code>.</p>
+		
+		<p>There are two kinds of numbers in Ruby. There are <strong>integers</strong>, which are signed numbers like <code>342</code>, <code>-1</code>, <code>0</code>, and <code>23_000</code>. Then there are floating-point numbers or <strong>floats</strong>, which are numbers with decimal points like <code>346.05</code>, <code>0.0</code>, and <code>-76.8</code>. For the most part we only need to concern ourselves with integers in Ruby, since floats are usually reserved programs that require extreme precision like in scientific experiments.</p>
+		
+		<p>Here are some of the mathematical operators in Ruby:</p>
+		
+		<div class="codeblock"><code class="code">
+		4 + 3         	#addition<br><br>
+		843 - 14      	#subtraction<br><br>
+		7 * -3       	#multiplication<br><br>
+		934765 / 5   	#division<br><br>
+		59 % 3       	#modulo division</code></div>
+						
+		<br><p>It's of course worth mentioning that the division represented by <code>/</code> is integer division. So an expression like <code>11 / 2</code> would evalute as <code>5</code>.</p>
+		
+		<p>These numbers and operators are great for mathematic calculation (duh), but we'll soon see that they play well with others.</p>
+		
+		<h3>Strings</h3>
+		
+		<p><strong>Strings</strong> are lines of text between either single (<code>'</code>) or double quotes (<code>"</code>). Just like numbers, in Ruby strings are objects so they behave accordingly. Let's take a look at the following examples:</p>
 		
 		
+		<div class="codeblock"><code class="code">puts 'Hello world!'</code></div>
 		
-
+		<p>Here we see possibly the most prevalent computer program ever written. It prints the string object <code>'Hello world!'</code> to the screen. Strings aren't only just letters, they also can include symbols, digits, punctuation. and spaces. In the next example you can see that you can combine strings with the <code>+</code> operator.</p>
+		
+		<div class="codeblock"><code class="code">puts 'Hello ' + 'world!'</code></div>
+		
+		<p>This is not unlike other languages that use <code>+</code> as a concatenation operator. However, in most languages how the
+		<code>+</code> operator works depends on the type of data it is connecting. When the operands are numbers the operator usually
+		performs the addition function, and when they are strings it performs concatenation. Yet you can't combine the two. Because strings
+		are objects in Ruby, we are afforded a lot of flexibility including the ability to do string arithmetic. Pay attention, you are about to see some of Ruby's magic:</p>
+		
+		<div class="codeblock"><code class="code">puts 'I am Ruby, and Ruby is me.' * 3</code></div>
+		
+		<p>There it was! Did you see it? Look again.</p>
+		<p>In this example we are printing <code>'I am Ruby, and Ruby is me.'</code> to the screen <code>3</code> times. But that's not the crazy part! The important thing is that strings
+		and numbers are interacting. This doesn't happen in most languages. This is great! Next you will learn that there are some formulations of strings and numbers don't interact well.</p>
 	
 	
 	
+		
+		<div class="jumbotron"><h2><a class="link_lesson midred" href="ch1p2.html">Come my child to Chapter 1: <i class="lightred">Part 2</i></a></h2></div>
+	</div>
+	</div>
 	
 	
-</div>
-
+</div> 
+<!--container closing tag^-->
 
 </body>
 </html>

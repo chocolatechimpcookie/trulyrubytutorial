@@ -23,7 +23,7 @@
 	
 <div class="container">	
 	<div class="row">
-		<div class="col-md-12">
+		<div class="col-xs-12">
 				
 				<!-- Why does 90% and lower have the top half get absorbed by the other color? -->
 				
@@ -71,40 +71,127 @@
 		</div>
 	</div>
 	
-	
+	<div class="row">
+	<div class="col-xs-12">
+		
 		<h3 class="page-header">Chapter 1 Part 3</h3>
-		<div class="row">
-
-				<div class="col-md-4">
-				</div>
-				
-				<div class=" col-md-8">
-				
-				</div>
-		</div>
-		
-		
-		
-		<div class="row">
-
-				<div class="col-md-4">
-				</div>
-				
-				<div class=" col-md-8">
-				
-				</div>
-		</div>
-		
-		<!-- the alternative is to have it all centered -->
-		<!-- I can always put images to the right -->
-		
-		
-		
-
+			
 	
+					<!--<div class="col-xs-4">-->
+					<!--</div>-->
+					<!---->
+					<!--<div class=" col-xs-8">-->
+					<!---->
+					<!--</div>-->
+			
+			
+			<!-- the alternative is to have it all centered -->
+			<!-- I can always put images to the right -->
+			
+		<p>If we assume for a moment that <code>email</code> is a Ruby object, the first example calls the <code>greeting</code> method on it. This method could be anything,
+		perhaps it adds a custom greeting to any email you are writing. In the second example, we chain the <code>greeting</code> and <code>salutation</code> methods so that
+		they both act on <code>email</code> one at a time, in order. So if <code>salutation</code> performs a similar function to <code>greeting</code>, first your email gains
+		a greeting and then a salutation all in one call. Using method chaining, there are many powerful functions Ruby can perform with minimal coding, such as complex database
+		queries. Ruby has tons of built-in methods to help with common coding situations. Let's think back the problems we had before when it came to mixing data types.</p>
+					
+		<img src="TEMP 22">
+		<div class="codeblock"><code class="code"></code></div>
+		<p>In this code Ruby would throw an error if we tried to run it. That's because we are trying to mix digits and numbers and computers don't like that. Ruby has two helpful methods for this situation <code>.to_i</code> and <code>.to_s</code>. The <code>.to_i</code> method (short for 'to integer') takes strings and if possible converts them to integers. As you might have guessed, the <code>.to_s</code> method takes numbers and converts them to strings. If we apply them to the example Ruby will output the <em>number</em> <code>10</code> for the first line, and the <em>digit</em> <code>55</code> for the second.</p>
+		
+		<img src="TEMP 23">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>In order to write more powerful programs, let's examine two more built-in Ruby methods <code>gets</code> and <code>.chomp</code>. The <code>puts</code> method stands for 'put string', so what would you reckon <code>gets</code> stands for? If you said 'get string', you're right (but I'll remind you that you are now talking to your computer screen). This method gets input from the user. Frequently paired with <code>gets</code> is the <code>.chomp</code> method. This method removes any carriage returns (you know, the symbol your <code>Enter</code> key actually types) from the end of the user input. Without <code>.chomp</code>, all user input would have line breaks where they don't belong!. See what happens if I leave out <code>.chomp</code>:</p>
+		
+		<img src="TEMP 24">
+		<div class="codeblock"><code class="code"></code></div>
+		<img src="TEMP 24 Result">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>Any data we get from the user will be polluted by that darn carriage return! This looks much better:</p>
+		
+		<img src="TEMP 25">
+		<div class="codeblock"><code class="code"></code></div>
+		<img src="TEMP 25 Result">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>Not only does this look better but the data <em>functions</em> better as well. Now we can use the <code>gets</code> method (along with <code>.chomp</code>) to write another little program. Try it at home if you've already installed RubyMine.</p>
+		
+		<img src="TEMP 26">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>In this program, an irate homeowner interrogates an intruder, but they do so using lots of the things we've just learned! We print strings, prompt the user for input, store that input in a variable, and format it using the <code>.capitalize!</code> and <code>.upcase!</code> methods. It is worth noting that both of those methods end with exclamation marks. This tells Ruby to format the actual objects themselves. If we were to omit the exclamations, Ruby would make a temporary copy of the object with the method applied. Consider these two code snippets:</p>
+		
+		<img src="TEMP 27">
+		<div class="codeblock"><code class="code"></code></div>
+		<img src="TEMP 28">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>The first snippet has us printing out a variable with a string in it. Then we call <code>capitalize</code> on our variable and print it. Then we print the variable again. The output looks like this:</p>
+		
+		<img src="TEMP 27 Result">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>Notice that the <code>.capitalize</code> method did not permanently change the string inside of the variable <code>bruce_wayne</code>. If it had, when we printed the variable again it would have still outputted <code>Batman</code>. In the second example we used <code>.capitalize!</code> instead of the exclamation-less variant, and this is the output:</p>
+		
+		<img src="TEMP 28 Result">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>Here the string inside the variable <code>edward_nigma</code> remains capitalized after running the <code>.capitalize!</code> method because Ruby knew to call the method on the actual object, not just a copy.</p>
+		
+		<p>So far we have only talked about methods that are built into Ruby. There are many, many such methods and you need only do a quick erm...<em>something</em> search of the web to find pages and pages of them with full documentation on their uses. You may not be surprised, however, to learn that the most powerful methods are the ones you write yourself. In the next lesson you will learn how to wield Ruby methods like a master, but first a brief exploration of <strong>control flow</strong>.</p>
+		
+		<h3>Control Flow</h3>
+		
+		<p>The power of our Ruby programs flows from the logic underlying them. Let's start with the basics though. In order to compare two objects in Ruby we use comparison methods. Here are some I'm sure you are familiar with:</p>
+		
+		<img src="TEMP 7">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>The result of a comparison method is a <strong>boolean</strong> value of <code>true</code>(in cases the expression is true) or <code>false</code>(in cases the expression is not true). Boolean values are very useful in programming. Imagine you are making a shopping app, doesn't it make sense that customers are only able to purchase items that are currently in stock?</p>
+		
+		<p>We achieve this underlying logic by using control flow in our programs. The most basic form of which comes from the use of <code><strong>if</strong></code>, <code><strong>else</strong></code>, <code><strong>elsif</strong></code>, and <code><strong>unless</strong></code>.</p>
+		
+		<p>The <code>if</code> conditional takes an expression like <code>4 < 5</code> and evaluates it for truth. If the expression is true, whatever block of code after the <code>if</code> will execute. If it's not true, Ruby skips it and goes on to the next part of the code. Any <code>if</code> must be paired with an <code>end</code> in order to tell Ruby when the conditional is finished.</p>
+		
+		<img src="TEMP 29">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>In this example we see the <code>if</code> in action. We save user input into a variable and then compare it to a string value <code>'yes'</code>. Then, only in the case that the user input is equivalent to our chosen value will the expression evaluate as true. When the expression is true, the code block between <code>if</code> and <code>end</code> executes.</p>
+		
+		<p>If we want to evaluate two possibilites we can add an <code>else</code> to the statement.</p>
+		
+		<img src="TEMP 30">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>Similarly, if we want to expand beyond only evaluating two possibilities we can use the powerful <code>elsif</code>. Like <code>if</code>, <code>elsif</code> takes a boolean expression as an argument. This is just another way of saying that the code block inside the <code>elsif</code> branch only executes if the expression is true.</p>
+		
+		<img src="TEMP 31">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>In this example we see that Ruby will output <code>x is less than y!</code> after evaluating the conditionals. Finally, we sometimes want to be able to check for falsehood as much as truth. We could reverse our current conditional setup, but luckily Ruby has a powerful <code>unless</code> statement for such situations.</p>
+		
+		<img src="TEMP 32">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>Ruby interprets this code to mean "print this string only when the condition is false". Notice that here we see very different syntax than before. Instead of wrapping a code block between an <code>if</code> and an <code>end</code>, Ruby is able to execute this code using only one line. And in case you are wondering, of COURSE we can use this syntax with other conditionals.</p>
+		
+		<img src="TEMP 33">
+		<div class="codeblock"><code class="code"></code></div>
+		
+		<p>Here we see our standard <code>if</code> conditional in this new form. This is a great example of how relaxed syntax rules allow Ruby to be flexible in accomodating to your needs.</p>
+		
+		<h1>Now Your First Trial</h1>
+		<h3>Succeed and you will be rewarded.</h3>
+		
+		<p>Follow along in the video below as I guide you through examples from this lesson as well as another mini project!</p>
 	
+		
+		<div class="jumbotron"><h2><a class="link_lesson midred" href="ch2p1.html">Come my child to Chapter 2: <i class="lightred">Duly Ruby</i></a></h2></div>
+					</div>
 	
-	
+	</div>
+	</div>
 	
 </div>
 
