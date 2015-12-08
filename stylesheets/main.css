@@ -17,6 +17,14 @@
     padding:11px;
 }
 
+.center
+{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    text-align: center;
+}
+
 .code
 {
 	
