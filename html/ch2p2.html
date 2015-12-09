@@ -76,19 +76,91 @@
 	<div class="col-xs-12">
 		<h3 class="page-header"><b>Chapter 2: Part 2</b></h3>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		<h3 class="page-header">Hashes</h3>
+
+		<p>Hashes are dictionaries made up of a collection of <strong>key-value pairs</strong>. Hash syntax looks like this:</p>
+
+		<div class="codeblock"><code class="code">
+			legends = {'Smalls' => 'Scotty',<br>
+			'The Jet' => 'Benny',<br>
+			'Ham' => 'Hamilton',<br>
+			'Squints' => 'Michael',<br>
+			'Yeah-Yeah' => 'Alan',<br>}
+		</code></div><br><br>
+
+		<p>Above we created a hash using <strong>literal notation</strong> syntax, which is the preferred notation, though Ruby's flexibility accomodates different syntaxes. Each <strong>key</strong> (e.g. <code>'Ham'</code>) points at a <strong>value</strong> (e.g. <code>'Hamilton'</code>) using the <code>=></code> operator. We also could have made an empty hash with a pair of curly braces <code>legends = {}</code> and then added to it. Let's add another kid to our team:</p>
+
+		<div class="codeblock"><code class="code">
+			legends['Repeat'] = 'Tommy'
+		</code></div><br><br>
+
+		<p>This will add the <code>'Repeat' => 'Tommy'</code> key-value pair to the <code>legends</code> hash. We can access hashes just like arrays except instead of using incidices, we use simply reference the key:</p>
+
+		<div class="codeblock"><code class="code">
+			puts legends['Squints']
+		</code></div><br><br>
+
+		<p>In this example, Ruby would print <code>Michael</code>. This method works because all keys in a Ruby hash must be <em>unique</em>, though values can repeat as often as we'd like. When we try to access a hash using a bum key:</p>
+
+		<div class="codeblock"><code class="code">
+			puts legends['The Beast']
+		</code></div><br><br>
+
+		<p>Instead of throwing an error like most languages, in the above case Ruby returns a special value called <code>nil</code> which is sort of a 'non-existence' value.</p>
+
+		<h3 class="page-header">Iterators & Hashes</h3>
+
+		<p>Just like with arrays, we need to know how to iterate over them to fully unlock their potential. The procedure and syntax is almost the same as with arrays:</p>
+
+		<div class="codeblock"><code class="code">
+			fave_lang = {'Keith' => 'Javascript',<br>
+			'Erik' => 'Python',<br>
+			'Jimmy' => 'PHP',<br>
+			'Graeme' => '.NET',<br>
+			'Scott' => 'Ruby'}<br><br>
+			fave_lang.each {|person, language| puts person + ' loves using ' + language}
+		</code></div><br><br>
+
+		<p>Notice the two parameters <code>person</code> and <code>language</code> inside our code block. They represent the key-value pairing in the hash. The above examples iterates through the entire hash, printing a concatenated string for each pairing. We can also iterate over just the keys or just the values in a hash using Ruby's <code>.each_key</code> and <code>.each_value</code> methods.</p>
+
+		<h3 class="page-header">Symbols</h3>
+
+		<p>So far we have been using strings as the keys in our hashes. But Ruby hashes work much better using Ruby symbols instead. <strong>Symbols</strong> are like lightweight strings. They always start with a colon and must be valid Ruby variable names, meaning the first character has to be a lowercase letter or an underscore like in <code>:my_symbol</code>. The rest of the symbol name can contain letters, numbers, and underscores. Here is how we use symbols in the creating of a hash:</p>
+
+		<div class="codeblock"><code class="code">
+			my_hash = {javascript: 'clunky',<br>
+			python: 'simple',<br>
+			ruby: 'elegant'}
+		</code></div><br><br>
+
+		<p>Notice that in the example, the <code>:</code> is on the opposite side of the symbol name versus the previous example. This is partly so that we can eliminate the so called 'hash rocket' <code>=></code> when pairing keys and values. Ruby syntax is always being updated to be simpler and more concise. We can see one of the important differences between symbols and strings with Ruby's built in <code>.object_id</code> method:</p>
+
+		<div class="codeblock"><code class="code">
+			puts 'string'.object_id<br>
+			puts 'string'.object_id<br><br>
+			puts :symbol.object_id<br>
+			puts :symbol.object_id<br>
+		</code></div><br><br>
+
+		<p>Running this in RubyMine will show two different object ID numbers for both <code>'string'</code>s (e.g. <code>70243192635920</code> and <code>70243192635840</code>), while showing the same object ID number for both <code>:symbol</code>s (e.g. <code>384488</code>). This is because symbols are <strong>not</strong> strings. It's not just the syntax that differs. For example, symbols cannot be changed once they have been created. Also, while there can be many strings all with the same value, there's only one copy of any given symbol at one time. Both of these differences result in increased speed and more efficient memory allocation when using symbols as hash keys. Ruby also has a handy <code>.to_sym</code> method for converting strings into symbols.</p>
+
+		<p>We can filter through a hash using specific criteria. Using Ruby's <code>.select</code> method, we can make up a code block that returns specific values:</p>
+
+		<div class="codeblock"><code class="code">
+			yelp_reviews = {nori: 3.5,<br>
+			mesob: 4.5,<br>
+			spice2: 4.0,<br>
+			bamboo: 3.0,<br>
+			fresco: 2.0}<br><br>
+			best_food = yelp_reviews.select {|name, rating| rating > 3}
+		</code></div><br><br>
+
+		<p>This time our code block we added criteria as to what key-value pairs we want to select. In the above example we created a variable <code>best_food</code> and stored restaurants with ratings above <code>3</code> stars. Were we to <code>puts</code> <code>best_food</code>, we would get:</p>
+
+		<div class="codeblock"><code class="code">
+			{:nori=>3.5, :mesob=>4.5, :spice2=>4.0}
+		</code></div><br><br>
+
 		<div class="jumbotron"><h2><a class="link_lesson midred" href="ch2p3.html">Come my child to Chapter 2: <i class="lightred">Part 3</i></a></h2></div>
 
 	</div>		
