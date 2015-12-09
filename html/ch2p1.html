@@ -75,18 +75,115 @@
 	<div class="row">
 	<div class="col-xs-12">
 		<h3 class="page-header"><b>Chapter 2: Duly Ruby <small>To the Center of the Gem</small></b></h3>
+
+		<p>Congratulations on rising to the status of <em>Newly Ruby</em>! We're going to focus much more on code examples now that you have been properly initiated into the world of Ruby. Ahead, you will be tested by navigating data structures and writing powerful methods for use in your programs. By the end of this lesson you will become <em>Duly Ruby</em> in preparation of your final challenge.</p>
+
+		<h3 class="page-header">Arrays</h3>
+
+		<p><strong>Arrays</strong> are ordered lists. Ruby arrays look like this:</p>
+
+		<div class="codeblock"><code class="code">
+			[]<br>
+			['Good', 'Morning', 'Vietnam']<br>
+			[3, [2, 5], 64]<br>
+			[1.6, true, 'corundum']
+		</code></div><br><br>
+
+		<p>In the first example, we have an empty array. Next we have an array of strings. The third example contains integers as well as the array <code>[2, 5]</code>. Arrays that have other arrays as elements (they're called <strong>2D or multidimensional arrays</strong>) can be very powerful for storing information. Finally we have an array containing a float, a boolean, and a string. Because Ruby interprets all the elements of <em>any</em> array as objects, we can have arrays whose elements are of different data types.</p>
+
+		<p>Because arrays are ordered, each element in gets an index. The first element gets index 0, the second index 1, and so on. We access elements of the array directly through these indicies. Take a look:</p>
+
+		<div class="codeblock"><code class="code">
+			my_array = [3, 4, 7, 3, 6, 0]<br><br>
+			print my_array[4]
+		</code></div><br><br>
+
+		<p>We can access the <em>n</em>th element of an array by putting the index in square brackets. Above we accessed the element at index <code>4</code> which returns the fifth element of <code>my_array</code>, or <code>6</code>. We also can access elements in a 2D array:</p>
+
+		<div class="codeblock"><code class="code">
+			mult_array = [[1, 2], [3, 4], [5, 6]]<br><br>
+			print mult_array[1][0]
+		</code></div><br><br>
+
+		<p>The first index in <code>mult_array[1][0]</code> indicates which sub-array and the second indicates the element within the sub-array. The above code would output <code>3</code>. We can add elements to an array:</p>
+
+		<div class="codeblock"><code class="code">
+			my_array = my_array << 23<br><br>
+			print my_array
+		</code></div><br><br>
+
+		<p>Here we used the <code><<</code> syntax to add <code>23</code> to the end of <code>my_array</code>. Ruby will then output <code>[3, 4, 7, 3, 6, 0, 23]</code>. We can also change a specific element of an array through assignment and accessing by index:</p>
+
+		<div class="codeblock"><code class="code">
+			my_array[2] = 99<br><br>
+			print my_array
+		</code></div><br><br>
+
+		<p>Here we set the third element of <code>my_array</code> equal to <code>99</code>. <code>print</code>ing out the array will give us <code>[3, 4, 99, 3, 6, 0, 23]</code>. We can also simply concatenate arrays (since in Ruby arrays are objects too) using the <code>+</code> operator:</p>
+
+		<div class="codeblock"><code class="code">
+			your_array = [12, 2, 66, 3]<br>
+			our_array = my_array + your_array<br><br>
+			print our_array
+		</code></div><br><br>
+
+		<p>Here we merged the newly created <code>your_array</code> with the updated <code>my_array</code> and stored it in <code>our_array</code>. Feel free to take a guess as to what Ruby will output from the above example.</p>
 	
+	<h3 class="page-header">Iterators</h3>
+
+		<p><strong>Iterators</strong> are just methods that repeatedly execute blocks of code. We'll see later that code <strong>blocks</strong> are a big deal in Ruby, especially when it comes to writing your own methods. One of the most basic iterators is the <strong><code>for</code> loop</strong>:</p>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		<div class="codeblock"><code class="code">
+			for var in 1...10<br>
+			    puts var<br> <!--Help me I need to be indented two spaces-->
+			end
+		</code></div><br><br>
+
+		<p>We're asking Ruby to <code>puts</code> the variable <code>var</code> for each integer in the range <code>1</code> through <code>10</code>. The above code will output <code>1, 2, 3, 4, 5, 6, 7, 8, 9</code> because the <code>...</code> syntax <em>excludes the highest end of the range</em>. There also is the <code>..</code> syntax for an inclusive range. Don't forget to put <code>end</code> at the end of your <code>for</code> loops otherwise Ruby won't know where your code block is finished. <code>for</code> loops are pretty good for when you know how many times you want execute a piece of code, but Ruby can do one better. In some instances you want a quick and dirty way to execute code a set number of times, so Ruby contains the extremely helpful (and aptly named) <code>.times</code> method.</p>
+
+		<div class="codeblock"><code class="code">
+			12.times {puts "Huzzah!"}
+		</code></div><br><br>
+
+		<p>You'll recognize this syntax from the beginning of this tutorial when you were one of the uninitiated. Here Ruby is simply executed whatever block of code is between the curly braces. Ruby treats <code>{}</code> much how it treats <code>end</code> in other loops. Both serve as demarcation for code blocks.</p>
+
+		<p>If you aren't sure how many times you will need to execute a block of code, but instead you want to execute code so long as some condition is true, we use <code>while</code> loops.</p>
+
+		<div class="codeblock"><code class="code">
+			counter = 0<br><br>
+			while counter < 5<br>
+			puts counter<br><!-- indent me-->
+			counter += 1<br><!-- me too!-->
+			end
+		</code></div><br><br>
+
+		<p>Here we have an incrementing <code>counter</code> (using the incremental assignment <code>+=</code> operator) that is determining how long the <code>while</code> loop will run. Ruby also has an <code>until</code> iterator that is a little like a reverse <code>while</code>:</p>
+
+		<div class="codeblock"><code class="code">
+			num = 0<br><br>
+			until num == 5<br>
+			puts num<br><!--indent-->
+			num += 1<br><!--indent-->
+			end
+		</code></div><br><br>
+
+		<p>In this example we use an <code>until</code> to print out the integers <code>0</code> through <code>4</code>(inclusive), just like the <code>while</code> example.</p>
+
+		<p>One of the most power iterator methods in Ruby is the <code>.each</code> method. Take a look at the syntax:</p>
+
+		<div class="codeblock"><code class="code">
+			array = ['five', 'four', 'three', 'two', 'one']<br><br>
+			array.each { |element| puts element }
+		</code></div><br><br>
+
+		<p>It is relatively easy to understand how <code>.each</code> works. It cycles through <code>array</code> putting out each element. Notice the code block syntax in this example. Between the <code>{}</code> we see the <code>||</code> with the placeholder name <code>element</code>. We could have been any name between the <code>||</code>, since it is simply a way to tell Ruby how we'll reference the elements in the array within our code block. We can also iterate through 2D array using <code>.each</code>:</p>
+
+		<div class="codeblock"><code class="code">
+			multi_array = [[3, 54], ['Hello ', 'world!'], [true, false]]<br><br>
+			multi_array.each {|sub_array| sub_array.each {|var| puts var}}
+		</code></div><br><br>
+
+		<p>In this example, we first call <code>.each</code> on the outer array. Then we call <code>.each</code> <em>again</em> on the variable <code>sub_array</code>, thus iterating through the whole 2D array. Did you by any chance notice how our <code>{|var| #code}</code> code block syntax is very concise and pleasant looking? Ruby is able to accomplish in ONE line of code what would take a lesser language 5 or more. One of the biggest benefits to programming in Ruby is simple and elegant looking code, a boon for the weary-eyed programmer.</p>
 	
 		<div class="jumbotron"><h2><a class="link_lesson midred" href="ch2p2.html">Come my child to Chapter 2: <i class="lightred">Part 2</i></a></h2></div>
 	
