@@ -75,20 +75,85 @@
 	<div class="row">
 	<div class="col-xs-12">
 		<h3 class="page-header"><b>Chapter 3: Truly Ruby <small> A Journey at its End</b></h3>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+		<p>At last you have arrived! Gaze back at how far you have come! You've learn nearly all the syntax one would require to start making truly <em>enlightened</em> Ruby programs.</p>
+
+		<h3 class="page-header">We Are All Just Objects In A Sea Of Ruby Code</h3>
+
+		<p>We've gone on and on about how Ruby is an object-oriented programming language. Pretty much everything in Ruby is an object as you know. Objects have methods and attributes or properties. Objects are simply concrete <strong>instances</strong> of an abstract category, or <strong>class</strong>.</p>
+
+		<div class="codeblock"><code class="code">
+			'underpants'.length
+		</code></div><br><Br>
+
+		<p>Here <code>'underpants'</code> is a string object that has a method <code>.length</code>, and a length attribute (number of characters) of <code>10</code>. We'll see that you can build complex objects with methods to make them more useful in your programs. But first we need to learn how to create objects at will.</p>
+
+		<h3 class="page-header">Classes</h3>
+
+		<p>A class is means to create many distinct objects with similar attributes and methods. Classes are similar to <em>types</em> or <em>kinds</em> in that they contain descriptions of what all instances of that class have in common. It lists out what it takes to be that kind of object. Here is the class syntax:</p>
+
+		<div class="codeblock"><code class="code">
+			class MyClass<br>
+			&nbsp;&nbsp;#Methods and Attributes<br>
+			end
+		</code></div><br><br>
+
+		<p>This syntax is very similar to how we define methods. The <code>class</code> keyword is like the <code>def</code> keyword. The names of classes are always written in upper CamelCase and don't use underscores. Here we create an instance of <code>MyClass</code>:</p>
+
+		<div class="codeblock"><code class="code">
+			my_instance = MyClass.new
+		</code></div><br><br>
+
+		<p>We create a variable called <code>my_instance</code> and set it equal to a new object created by running the <code>.new</code> method on the <code>MyClass</code> class. Now when we use <code>my_instance</code> in our programs, we will have all of the methods and attributes in <code>MyClass</code> available to us. This is a very DRY way to write programs, as there is no need to rewrite methods or define values for each distinct object used. Classes declarations often include specify arguments that will be needed to create a new class object:</p>
+
+		<div class="codeblock"><code class="code">
+			class PowerRanger<br>
+			&nbsp;&nbsp;def initialize(animal, color)<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@animal = animal<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@color = color<br>
+			&nbsp;&nbsp;end<br>
+			end
+		</code></div><br><br>
+
+		<p>In this example we are adding a method into our class <code>PowerRanger</code>. We define <code>initialize</code> as a method that takes two arguments, one representing the ranger's power <code>animal</code>, and another representing the <code>color</code> of their suit. Inside the method we create two special variables <code>@animal</code> and <code>@color</code> called <strong>instance variables</strong>. These are variables that attach to the <em>instance</em> of a class when it is created. All instance variables begin with <code>@</code> to differentiate them from regular variables. Above we set these variables so that any time we create a new <code>PowerRanger</code> object, they will have an animal and a color created using <code>animal</code> and <code>color</code> passed to it.</p>
+
+		<div class="codeblock"><code class="code">
+			kimberly = PowerRanger.new('Pterodactyl', 'pink')
+		</code></div><br><br>
+
+		<p>We create <code>kimberly</code>, a new <code>'pink'</code> (the <code>@color</code> attribute) <code>PowerRanger</code> who draws her power from the <code>'Pterodactyl'</code> (the <code>@animal</code> attribute). Those variables are attached to <code>kimberly</code> in particular. They are HERS.</p>
+
+		<p>We frequently have to concern ourselves with the <strong>scope</strong> of variables and methods. The scope is how reachable variables and methods are to different parts of your programs. Some are available to all parts of the program, some are only to members of specified classes, and others are only to class objects.</p>
+
+		<div class="codeblock"><code class="code">
+			class Car<br>
+			&nbsp;&nbsp;@@cars_sold = 0<br>
+			&nbsp;&nbsp;def initialize(make, model)<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@make = make<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@model = model<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@@cars_sold += 1<br>
+			&nbsp;&nbsp;end<br>
+			end
+		</code></div><br><br>
+
+		<p>Class variables belong to the class itsel instead of to an instance. Class variables start with the <code>@@</code>. Above we create the <code>@@cars_sold</code> variable for <code>Car</code> class to keep track of the number of cars we sell (or <code>Car</code> objects we create). Notice how the variable is outside of the <code>initialize</code> code block. This is a great way to visualize scope. In the above example, there is just one copy of the <code>@@cars_sold</code> variable shared by all <code>Car</code> objects, and it increases every time a new instance is created.</p>
+
+		<p> We also want to have variables available to all parts of our Ruby programs. We do this using <strong>global variables</strong>. We create global variables using <code>$</code>, and they can be placed inside or outside of classes or methods. Take a look at our new class declaration:</p>
+
+		<div class="codeblock"><code class="code">
+			class Car<br>
+			&nbsp;&nbsp;$manufacturer = 'Toyota'<br>
+			&nbsp;&nbsp;@@cars_sold = 0<br>
+			&nbsp;&nbsp;def initialize(model, year)<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@model = model<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@year = year<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@@cars_sold += 1<br>
+			&nbsp;&nbsp;end<br>
+			end
+		</code></div><br><br>
+
+		<p>Here we see that every new <code>Car</code> object we create will have the variable <code>$manufacturer</code>. Because it is global, we can also access that variable at any time from anywhere in the program.</p>
+
 		<div class="jumbotron"><h2 class="center"><a class="link_lesson midred" href="ch3p2.html">Come my child to Chapter 3: <i class="lightred">Part 2</i></a></h2></div>
 	
 	</div>		
