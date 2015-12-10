@@ -75,20 +75,64 @@
 	<div class="row">
 	<div class="col-xs-12">
 		<h3 class="page-header"><b>Chapter 2: Part 3</b></h3>
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+		<p>You have traveled far young one. You are almost ready for your second challenge, but you will need a more powerful weapon in the fight against something or other...(can't always be clever, can we?)</p>
+
+		<h3 class="page-header">Methods</h3>
+
+		<p>One of the most venerated virtues in Ruby is to be <strong>DRY</strong>. DRY stands for "Don't Repeat Yourself" and it is a practice that can radically streamline your programs. Of course the best way to achieve DRYness is to create as many reusable pieces of code as possible. Enter <strong>methods</strong>. Methods are just functions in Ruby. You can repeatedly use the same method without constantly rewriting it. In Ruby, once you have written a method you can even use that method in other programs! Here is a method declaration:</p>
+
+		<div class="codeblock"><code class="code">
+			def greeting<br>
+			&nbsp;&nbsp;puts "Hello world!"<br>
+			end
+		</code></div><br><br>
+
+		<p>We declare methods using the <code>def</code> (short for "define") keyword. Method declarations are made up of three parts: header, body, and end. The header contains <code>def</code>, the method name, and any method arguments. The body contains the code block to be executed. The body is conventionally indented two spaces (remember, "Convention Over Configuration!"). The method then ends with  <code>end</code>. Check out another method declaration:</p>
+
+		<div class="codeblock"><code class="code">
+			def cube(n)<br>
+			&nbsp;&nbsp;puts n ** 3<br>
+			end<br><br>
+			puts cube(7)
+		</code></div><br><br>
+
+		<p>Here we define the method <code>cube</code> that takes one number as argument <code>n</code>. The code block raises to the third power whatever number you call the method on. In the example we call the method on the number <code>7</code> which returns <code>343</code>. More on methods soon.</p>
+
+		<h3 class="page-header">Blocks</h3>
+
+		<p>Most methods that we have seen have defined names. <strong>Blocks</strong> are a way of creating methods that don't need names. Blocks in Ruby are demarcated by either the <code>do</code>/<code>end</code> or <code>{}</code> syntax:</p>
+
+		<div class="codeblock"><code class="code">
+			[true, false, true, true, false].each {|bool| puts bool}
+		</code></div><br><br>
+
+		<p>We have seen code blocks before in <code>for</code> and <code>while</code> loops as well as in control flow statements. Methods can take blocks as arguments, as is the case of the <code>.each</code> method. It takes the code block and applies it to an array. Very cool. Passing a block to a method helps abstract tasks from the method. Very DRY.</p>
+
+		<h3 class="page-header">Applications<br><small>Sorting and Other Cool Things</small></h3>
+
+		<p>One of the most important things we need to be able to do with a language is sort data. Ruby has two built-in sorting methods <code>.sort</code> and <code>.sort!</code>. When used with the combined comparison operator <code><=></code> we can reorder arrays pretty easily. Here's the syntax:</p>
+
+		<div class="codeblock"><code class="code">
+			drinks = ['red bull', 'monster', 'full-throttle', 'amp', 'rockstar']<br><br>
+			drinks.sort! {|drink1, drink2| drink2 <=> drink1}<br><br>
+			puts drinks
+		</code></div><br><br>
+
+		<p>The <code>.sort!</code> takes the block with our <code><=></code> operator as argument and runs it over the <code>drinks</code> array. In our example, the <code><=></code> compares the two operands <code>drink1</code> and <code>drink2</code> and returns <code>0</code> if <code>drink1 == drink2</code>, <code>1</code> if <code>drink1 > drink2</code>, and <code>-1</code> if <code>drink1 < drink2</code>.</p>
+
+		<p>The block passed into <code>.sort!</code> must return <code>1</code>, <code>0</code>,, or <code>-1</code>, hence our use of the <code><=</code>. Intuitively if it returns <code>-1</code>, <code>drink1</code> comes before <code>drink2</code>. If it returns <code>0</code> the two elements are of equal weight and order is preserved. If it returns <code>1</code> the reverse is true and <code>drink2</code> comes before <code>drink1</code>. The result of the above code is:</p>
+
+		<div class="codeblock"><code class="code">
+			amp<br>
+			full-throttle<br>
+			monster<br>
+			red bull<br>
+			rockstar<br>
+		</code></div><br><br>
+
+		<p>Sorting is just one of the great things you can do with methods follow along in the video below as I guide you through examples from this lesson as well as another mini project!</p>
+
 		<div class="jumbotron"><h2 class="center"><a class="link_lesson midred" href="ch3p1.html">Come my child to Chapter 3: <i class="lightred">Truly Ruby</i></a></h2></div>
 
 	</div>		
