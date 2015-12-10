@@ -1,4 +1,3 @@
-
 # Temp 1
 
 4.times {puts 'I am but an object in a sea of Ruby code.'}
@@ -148,6 +147,7 @@ name = gets.chomp
 
 puts "I've always thought #{name} was a cute name."
 
+
 # Temp 26
 
 puts "What's your first name?"
@@ -178,6 +178,7 @@ bruce_wayne = 'batman'
 puts bruce_wayne
 puts bruce_wayne.capitalize
 puts bruce_wayne
+
 
 # Temp 28
 
@@ -229,5 +230,4 @@ puts 'Obviously' if 4 > .2
 !false          #negation
 true && true    #conjuction
 true || false   #disjunction
-
 

@@ -119,8 +119,13 @@
 			puts "I've always thought #{name} was a cute name."
 		</code></div><br><br>
 		
-		<img src="TEMP 24 Result">
-		<div class="codeblock"><code class="code"></code></div><br><br>
+	<!--	<img src="TEMP 24 Result"> -->
+		<div class="codeblock"><code class="code">
+			What is your name?<br>
+			<em>Bob</em><br>
+			I've always thought Bob<br>
+			&nbsp;was a cute name.
+		</code></div><br><br>
 		
 		<p>Any data we get from the user will be polluted by that darn carriage return! This looks much better:</p>
 		
@@ -134,8 +139,12 @@
 		</code></div><br><br>
 		
 		
-		<img src="TEMP 25 Result">
-		<div class="codeblock"><code class="code"></code></div><br><br>
+		<!--<img src="TEMP 25 Result">-->
+		<div class="codeblock"><code class="code"></code>
+			What is your name?<br>
+			<em>Jill</em><br>
+			I've always thought Jill was a cute name.
+		</div><br><br>
 		
 		<p>Not only does this look better but the data <em>functions</em> better as well. Now we can use the <code>gets</code> method (along with <code>.chomp</code>) to write another little program. Try it at home if you've already installed RubyMine.</p>
 		
@@ -185,13 +194,21 @@
 		
 		<p>The first snippet has us printing out a variable with a string in it. Then we call <code>capitalize</code> on our variable and print it. Then we print the variable again. The output looks like this:</p>
 		
-		<img src="TEMP 27 Result">
-		<div class="codeblock"><code class="code"></code></div><br><br>
+		<!--<img src="TEMP 27 Result">-->
+		<div class="codeblock"><code class="code">
+			batman<br>
+			Batman<br>
+			batman
+		</code></div><br><br>
 		
 		<p>Notice that the <code>.capitalize</code> method did not permanently change the string inside of the variable <code>bruce_wayne</code>. If it had, when we printed the variable again it would have still outputted <code>Batman</code>. In the second example we used <code>.capitalize!</code> instead of the exclamation-less variant, and this is the output:</p>
 		
-		<img src="TEMP 28 Result">
-		<div class="codeblock"><code class="code"></code></div><br><br>
+		<!--<img src="TEMP 28 Result">-->
+		<div class="codeblock"><code class="code">
+			riddler<br>
+			Riddler<br>
+			Riddler
+		</code></div><br><br>
 		
 		<p>Here the string inside the variable <code>edward_nigma</code> remains capitalized after running the <code>.capitalize!</code> method because Ruby knew to call the method on the actual object, not just a copy.</p>
 		
@@ -276,7 +293,7 @@
 		<h3 class="page-header">Now Your First Trial <small> Succeed and you will be rewarded.</small></h3>
 		
 		<p>Follow along in the video below as I guide you through examples from this lesson as well as another mini project!</p>
-	
+
 		<br>
 		<div class="jumbotron"><h2 class="center"><a class="link_lesson midred" href="ch2p1.html">Come my child to Chapter 2: <i class="lightred">Duly Ruby</i></a></h2></div>
 					</div>
