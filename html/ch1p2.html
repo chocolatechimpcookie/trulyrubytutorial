@@ -110,13 +110,13 @@
 			puts 'Fab' + 4<br>
 			puts '6' * '7'<br>
 			</code>
-		</div>
+		</div><br><br>
 		
 		<p>To better understand why some of these mixed type lines of code work and some don't, we need to look inside of Ruby to see what is happening. In the first example, we are trying to take the string <code>'Mulder'</code> and multiply it <code>'Scully'</code> number of times. This is patently ridiculous so it's no surprise that Ruby can't make heads or tales of it. In the third example, we see that though different data types can work together, they cannot be combined. The second example is a little trickier. Here we are taking the <em>number</em> <code>8</code> and trying to subtract from it the <em>digit</em> <code>'2'</code>. In all programming languages it is important to understand this difference. </p>
 		
 		<h3 class="page-header">Flexibility Is Key</h3>
 		
-		<div class="codeblock">puts 'Ziggy piggy!' * 4<code class="code"></code></div><br><br>
+		<div class="codeblock"><code class="code">puts 'Ziggy piggy!' * 4</code></div><br><br>
 		<p>As you recall, in Ruby everything is treated as an object. So when you use an operator like <code>*</code> with the operands <code>'Ziggy piggy!'</code> and <code>4</code>, Ruby reads it as "print four of this object to the screen". It doesn't really matter what that object is. In cases where the object is a number like <code>6</code>, the line <code>6 * 4</code> means "print four of the number 6 to the screen" which is equivalent to printing <code>6 + 6 + 6 + 6</code>, or <code>24</code>. Ruby evaluates code from left to right, one line at a time so the order of the operands matters greatly. Compare this code to the above example:</p>
 		
 		<div class="codeblock"><code class="code">puts 4 * 'Ziggy piggy!'</code></div><br><br>
@@ -131,7 +131,7 @@
 		var_name = 'This is a string variable'<br>
 		days_since_outbreak = 28<br>
 		</code>
-		</div>
+		</div><br><br>
 		
 		<p>In the first example, we have a name <code>var_name</code> and we use it to point at the string <code>'This is a string variable'</code> while our second example sets the variable name to an integer value of <code>28</code>. Now that we have these values safe and sound, we can play around with them a little starting with printing.</p>
 		
@@ -140,7 +140,7 @@
 			puts var_name<br>
 			puts days_since_outbreak<br>
 			</code>
-		</div>
+		</div><br><br>
 		
 		<p>Will output <code>This is a string variable</code> and <code>28</code> respectively.</p>
 		
@@ -149,13 +149,13 @@
 		
 		<p>Will output <code>This is a string variableThis is a string variable</code> with no spaces since we didn't add any in there. The same basic rules of string arithmetic apply here as well.</p>
 		
-		<img src="TEMP 17">
+		<!--<img src="TEMP 17">-->
 		<div class="codeblock">
 			<code class="code">
 			days_before_rescue = days_since_outbreak + 31<br>
 			puts days_before_rescue<br>
 			</code>
-		</div>
+		</div><br><br>
 						
 		
 		<p>In this example, we create a new variable called <code>days_before_rescue</code> and set it to the value of <code>days_since_outbreak</code>(which we just set to <code>28</code>) plus <code>31</code>. Then we print it and get an output of <code>59</code>.</p>
