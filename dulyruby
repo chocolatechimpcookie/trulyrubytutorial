@@ -1,0 +1,159 @@
+# Temp A
+
+[]
+['Good', 'Morning', 'Vietnam']
+[3, [2, 5], 64]
+[1.6, true, 'corundum']
+
+# Temp B
+
+my_array = [3, 4, 7, 3, 6, 0]
+
+print my_array[4]
+
+# Temp BB
+
+mult_array = [[1, 2], [3, 4], [5, 6]]
+
+print mult_array[1][0]
+
+# Temp C
+
+my_array = my_array << 23
+
+print my_array
+
+# Temp D
+
+my_array[2] = 99
+
+print my_array
+
+# Temp E
+
+your_array = [12, 2, 66, 3]
+
+our_array = my_array + your_array
+
+print our_array
+
+# Temp F
+
+for var in 1...10
+  puts var
+end
+
+# Temp G
+
+12.times {puts "Huzzah!"}
+
+# Temp H
+
+counter = 0
+
+while counter < 5
+  puts counter
+  counter += 1
+end
+# Temp I
+
+num = 0
+
+until num == 5
+  puts num
+  num += 1
+end
+
+# Temp J
+
+array = ['five', 'four', 'three', 'two', 'one']
+
+array.each { |element| puts element }
+
+# Temp K
+
+multi_array = [[3, 54], ['Hello ', 'world!'], [true, false]]
+
+multi_array.each {|sub_array| sub_array.each {|var| puts var}}
+
+# Temp L
+
+legends = {'Smalls' => 'Scotty',
+           'The Jet' => 'Benny',
+           'Ham' => 'Hamilton',
+           'Squints' => 'Michael',
+           'Yeah-Yeah' => 'Alan'}
+
+# Temp M
+
+legends['Repeat'] = 'Tommy'
+
+# Temp N
+
+puts legends['Squints']
+
+# Temp O
+
+puts legends['The Beast']
+
+# Temp P
+
+fave_lang = {'Keith' => 'Javascript',
+             'Erik' => 'Python',
+             'Jimmy' => 'PHP',
+             'Graeme' => '.NET',
+             'Scott' => 'Ruby'}
+
+fave_lang.each {|person, language| puts person + ' loves using ' + language}
+
+# Temp Q
+
+my_hash = {javascript: 'clunky',
+           python: 'simple',
+           ruby: 'elegant'}
+
+# Temp R
+
+puts 'string'.object_id
+puts 'string'.object_id
+
+puts :symbol.object_id
+puts :symbol.object_id
+
+# Temp S
+
+yelp_reviews = {nori: 3.5,
+                mesob: 4.5,
+                spice2: 4.0,
+                bamboo: 3.0,
+                fresco: 2.0}
+
+best_food = yelp_reviews.select {|name, rating| rating > 3}
+
+puts best_food
+
+# Temp T
+
+def greeting
+  puts "Hello world!"
+end
+
+# Temp U
+
+def cube n
+  puts n ** 3
+end
+
+puts cube(7)
+
+# Temp V
+
+[true, false, true, true, false].each {|bool| puts bool}
+
+# Temp W
+
+drinks = ['red bull', 'monster', 'full-throttle', 'amp', 'rockstar']
+
+drinks.sort! {|drink1, drink2| drink1 <=> drink2}
+
+puts drinks
