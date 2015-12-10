@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Newly Ruby</title>
+</head>
+<body>
+<h1>And so the journey begins...</h1>
+
+<h3>Objects and Data Types</h3>
+
+<p>In today's world, Object-Oriented Programming is pervasive but every object-oriented language is different in what it are objects how it treats them. This can get confusing so you'll be happy to hear that, in Ruby, <strong style="color:red">EVERYTHING</strong> is an object. Take a look here:</p>
+
+<img src="TEMP3"><br>
+
+<p>So we have this word <code>'underpants'</code> and we have this new thing <code>.length</code> as well. If we run this simple program, Ruby will output <code>10</code>. That's because the <strong>object</strong> <code>'underpants'</code> has a length of <code>10</code> characters.</p>
+
+<img src="TEMP5"><br>
+
+<p>In this example, try to think what Ruby will display on the screen. If you were thinking <code>Nirvana</code> then you would be correct. Both <code>.length</code> and <code>.capitalize</code> are called <strong>methods</strong>. Methods are actions by objects. So when the method <code>.length</code> acts on the object <code>'underpants'</code>, Ruby checks the length of the object and gives us the resulting <code>10</code>. We will learn more about methods later in this lesson.  We will also return to objects in Ruby in Lesson 3 after you have become <em>Duly Ruby</em>.</p>
+
+<h3>Numbers</h3>
+
+<p>Ruby is capable of doing a lot of things without any special configuration, like arithmetic. Let's start out with something simple: <code>2 + 2</code></p>
+
+<img src="TEMP4"/><br>
+
+<p>This program <code>puts</code> the result of the expression <code>2 + 2</code> which Ruby has automatically calculated. As far as we're concerned, the code above is the same as <code>puts 4</code>.</p>
+
+<p>There are two kinds of numbers in Ruby. There are <strong>integers</strong>, which are signed numbers like <code>342</code>, <code>-1</code>, <code>0</code>, and <code>23_000</code>. Then there are floating-point numbers or <strong>floats</strong>, which are numbers with decimal points like <code>346.05</code>, <code>0.0</code>, and <code>-76.8</code>. For the most part we only need to concern ourselves with integers in Ruby, since floats are usually reserved programs that require extreme precision like in scientific experiments.</p>
+
+<p>Here are some of the mathematical operators in Ruby:</p>
+
+<img src="TEMP6">
+
+<p>It's of course worth mentioning that the division represented by <code>/</code> is integer division. So an expression like <code>11 / 2</code> would evalute as <code>5</code>.</p>
+
+<p>These numbers and operators are great for mathematic calculation (duh), but we'll soon see that they play well with others.</p>
+
+<h3>Strings</h3>
+
+<p><strong>Strings</strong> are lines of text between either single (<code>'</code>) or double quotes (<code>"</code>). Just like numbers, in Ruby strings are objects so they behave accordingly. Let's take a look at the following examples:</p>
+
+<img src="TEMP 8">
+
+<p>Here we see possibly the most prevalent computer program ever written. It prints the string object <code>'Hello world!'</code> to the screen. Strings aren't only just letters, they also can include symbols, digits, punctuation. and spaces. In the next example you can see that you can combine strings with the <code>+</code> operator.</p>
+
+<img src="TEMP 9">
+
+<p>This is not unlike other languages that use <code>+</code> as a concatenation operator. However, in most languages how the <code>+</code> operator works depends on the type of data it is connecting. When the operands are numbers the operator usually performs the addition function, and when they are strings it performs concatenation. Yet you can't combine the two. Because strings are objects in Ruby, we are afforded a lot of flexibility including the ability to do string arithmetic. Pay attention, you are about to see some of Ruby's magic:</p>
+
+<img src="TEMP 10">
+
+<p>There it was! Did you see it? Look again.</p>
+<p>In this example we are printing <code>'I am Ruby, and Ruby is me.'</code> to the screen <code>3</code> times. But that's not the crazy part! The important thing is that strings and numbers are interacting. This doesn't happen in most languages. This is great but there are some formulations of strings and numbers don't interact well:</p>
+
+<img src="TEMP 11">
+
+<p>To better understand why some of these mixed type lines of code work and some don't, we need to look inside of Ruby to see what is happening. In the first example, we are trying to take the string <code>'Mulder'</code> and multiply it <code>'Scully'</code> number of times. This is patently ridiculous so it's no surprise that Ruby can't make heads or tales of it. In the third example, we see that though different data types can work together, they cannot be combined. The second example is a little trickier. Here we are taking the <em>number</em> <code>8</code> and trying to subtract from it the <em>digit</em> <code>'2'</code>. In all programming languages it is important to understand this difference. </p>
+
+<h3>Flexibility Is Key</h3>
+
+<img src="TEMP 12">
+
+<p>As you recall, in Ruby everything is treated as an object. So when you use an operator like <code>*</code> with the operands <code>'Ziggy piggy!'</code> and <code>4</code>, Ruby reads it as "print four of this object to the screen". It doesn't really matter what that object is. In cases where the object is a number like <code>6</code>, the line <code>6 * 4</code> means "print four of the number 6 to the screen" which is equivalent to printing <code>6 + 6 + 6 + 6</code>, or <code>24</code>. Ruby evaluates code from left to right, one line at a time so the order of the operands matters greatly. Compare this code to the above example:</p>
+
+<img src="TEMP 13">
+
+<p>Ruby can't multiply things by strings so this order doesn't work. By making everything an object, there are less restrictions in the configuration of Ruby. In fact, there is a well-known Ruby mantra: "Choose Convention Over Configuration". The language itself does not require very much regarding typing and naming of variabels. By not requiring strong data typing for variables, the developer has more freedom for creativity. But if you choose to follow the many well-established Ruby conventions, your code can be just as powerful as more restrictive languages. As you travel further down the path to Code Englightenment, you will discover ways to use those conventions to supercharge your programs.</p>
+
+<h3>Variables</h3>
+
+<p>Of course we want to store these numbers and strings for use in our programs, and for that we assign them names, or <strong>variables</strong>. Ruby variables can be any sequence of letters, numbers, and underscores so long as the variable name begins with a lowercase letter. Because of this there is a widespread convention to use lower camelCase for all variable names. Direct your gaze to the next code examples:</p>
+
+<img src="TEMP 14">
+
+<p>In the first example, we have a name <code>var_name</code> and we use it to point at the string <code>'This is a string variable'</code> while our second example sets the variable name to an integer value of <code>28</code>. Now that we have these values safe and sound, we can play around with them a little starting with printing.</p>
+
+<img src="TEMP 15">
+
+<p>Will output <code>This is a string variable</code> and <code>28</code> respectively.</p>
+
+<img src="TEMP 16">
+
+<p>Will output <code>This is a string variableThis is a string variable</code> with no spaces since we didn't add any in there. The same basic rules of string arithmetic apply here as well.</p>
+
+<img src="TEMP 17">
+
+<p>In this example, we create a new variable called <code>days_before_rescue</code> and set it to the value of <code>days_since_outbreak</code>(which we just set to <code>28</code>) plus <code>31</code>. Then we print it and get an output of <code>59</code>.</p>
+
+<p>We also want the ability to display variables within strings to make using the data from our programs much easier. To do this Ruby uses the <code>#{variable}</code> syntax to reference variables from within strings. Take a look:</p>
+
+<img src="TEMP 19">
+
+<p>The above code will output <code>My favorite color is orange</code>. Simple. So far we've been holding your hand. Now you know more than enough Ruby to write a fun little program.</p>
+
+<img src="TEMP 18">
+
+<p>Our program starts by creating some variables and assigning them values, then it <code>puts</code> strings that reference those values using the <code>#{variable}</code> form. This is what Ruby outputs from the program.</p>
+
+<img src="TEMP 18 Result">
+
+<h3>Methods</h3>
+
+<p><strong>Methods</strong> are actions we make on objects. You have seen them already. Things like <code>puts</code>, <code>.length</code>, and <code>.capitalize</code> are all Ruby methods. Most Ruby methods make use of the dot syntax to connect methods and objects. Methods can contain lowercase letters, underscores, and question and exclamation marks. Those last two are for special methods we will talk about next lesson.</p>
+
+<img src="TEMP 20">
+
+<p>This code outputs the character length of the string, which in this case is 18. Methods can sometimes be chained together like so:</p>
+
+<img src="TEMP 21">
+
+<p>If we assume for a moment that <code>email</code> is a Ruby object, the first example calls the <code>greeting</code> method on it. This method could be anything, perhaps it adds a custom greeting to any email you are writing. In the second example, we chain the <code>greeting</code> and <code>salutation</code> methods so that they both act on <code>email</code> one at a time, in order. So if <code>salutation</code> performs a similar function to <code>greeting</code>, first your email gains a greeting and then a salutation all in one call. Using method chaining, there are many powerful functions Ruby can perform with minimal coding, such as complex database queries. Ruby has tons of built-in methods to help with common coding situations. Let's think back the problems we had before when it came to mixing data types.</p>
+
+<img src="TEMP 22">
+
+<p>In this code Ruby would throw an error if we tried to run it. That's because we are trying to mix digits and numbers and computers don't like that. Ruby has two helpful methods for this situation <code>.to_i</code> and <code>.to_s</code>. The <code>.to_i</code> method (short for 'to integer') takes strings and if possible converts them to integers. As you might have guessed, the <code>.to_s</code> method takes numbers and converts them to strings. If we apply them to the example Ruby will output the <em>number</em> <code>10</code> for the first line, and the <em>digit</em> <code>55</code> for the second.</p>
+
+<img src="TEMP 23">
+
+<p>In order to write more powerful programs, let's examine two more built-in Ruby methods <code>gets</code> and <code>.chomp</code>. The <code>puts</code> method stands for 'put string', so what would you reckon <code>gets</code> stands for? If you said 'get string', you're right (but I'll remind you that you are now talking to your computer screen). This method gets input from the user. Frequently paired with <code>gets</code> is the <code>.chomp</code> method. This method removes any carriage returns (you know, the symbol your <code>Enter</code> key actually types) from the end of the user input. Without <code>.chomp</code>, all user input would have line breaks where they don't belong!. See what happens if I leave out <code>.chomp</code>:</p>
+
+<img src="TEMP 24">
+<img src="TEMP 24 Result">
+
+<p>Any data we get from the user will be polluted by that darn carriage return! This looks much better:</p>
+
+<img src="TEMP 25">
+<img src="TEMP 25 Result">
+
+<p>Not only does this look better but the data <em>functions</em> better as well. Now we can use the <code>gets</code> method (along with <code>.chomp</code>) to write another little program. Try it at home if you've already installed RubyMine.</p>
+
+<img src="TEMP 26">
+
+<p>In this program, an irate homeowner interrogates an intruder, but they do so using lots of the things we've just learned! We print strings, prompt the user for input, store that input in a variable, and format it using the <code>.capitalize!</code> and <code>.upcase!</code> methods. It is worth noting that both of those methods end with exclamation marks. This tells Ruby to format the actual objects themselves. If we were to omit the exclamations, Ruby would make a temporary copy of the object with the method applied. Consider these two code snippets:</p>
+
+<img src="TEMP 27">
+<img src="TEMP 28">
+
+<p>The first snippet has us printing out a variable with a string in it. Then we call <code>capitalize</code> on our variable and print it. Then we print the variable again. The output looks like this:</p>
+
+<img src="TEMP 27 Result">
+
+<p>Notice that the <code>.capitalize</code> method did not permanently change the string inside of the variable <code>bruce_wayne</code>. If it had, when we printed the variable again it would have still outputted <code>Batman</code>. In the second example we used <code>.capitalize!</code> instead of the exclamation-less variant, and this is the output:</p>
+
+<img src="TEMP 28 Result">
+
+<p>Here the string inside the variable <code>edward_nigma</code> remains capitalized after running the <code>.capitalize!</code> method because Ruby knew to call the method on the actual object, not just a copy.</p>
+
+<p>So far we have only talked about methods that are built into Ruby. There are many, many such methods and you need only do a quick erm...<em>something</em> search of the web to find pages and pages of them with full documentation on their uses. You may not be surprised, however, to learn that the most powerful methods are the ones you write yourself. In the next lesson you will learn how to wield Ruby methods like a master, but first a brief exploration of <strong>control flow</strong>.</p>
+
+<h3>Control Flow</h3>
+
+<p>The power of our Ruby programs flows from the logic underlying them. Let's start with the basics though. In order to compare two objects in Ruby we use comparison methods. Here are some I'm sure you are familiar with:</p>
+
+<img src="TEMP 7">
+
+<p>The result of a comparison method is a <strong>boolean</strong> value of <code>true</code>(in cases the expression is true) or <code>false</code>(in cases the expression is not true). Boolean values are very useful in programming. Imagine you are making a shopping app, doesn't it make sense that customers are only able to purchase items that are currently in stock?</p>
+
+<p>We achieve this underlying logic by using control flow in our programs. The most basic form of which comes from the use of <code><strong>if</strong></code>, <code><strong>else</strong></code>, <code><strong>elsif</strong></code>, and <code><strong>unless</strong></code>.</p>
+
+<p>The <code>if</code> conditional takes an expression like <code>4 < 5</code> and evaluates it for truth. If the expression is true, whatever block of code after the <code>if</code> will execute. If it's not true, Ruby skips it and goes on to the next part of the code. Any <code>if</code> must be paired with an <code>end</code> in order to tell Ruby when the conditional is finished.</p>
+
+<img src="TEMP 29">
+
+<p>In this example we see the <code>if</code> in action. We save user input into a variable and then compare it to a string value <code>'yes'</code>. Then, only in the case that the user input is equivalent to our chosen value will the expression evaluate as true. When the expression is true, the code block between <code>if</code> and <code>end</code> executes.</p>
+
+<p>If we want to evaluate two possibilites we can add an <code>else</code> to the statement.</p>
+
+<img src="TEMP 30">
+
+<p>Similarly, if we want to expand beyond only evaluating two possibilities we can use the powerful <code>elsif</code>. Like <code>if</code>, <code>elsif</code> takes a boolean expression as an argument. This is just another way of saying that the code block inside the <code>elsif</code> branch only executes if the expression is true.</p>
+
+<img src="TEMP 31">
+
+<p>In this example we see that Ruby will output <code>x is less than y!</code> after evaluating the conditionals. Finally, we sometimes want to be able to check for falsehood as much as truth. We could reverse our current conditional setup, but luckily Ruby has a powerful <code>unless</code> statement for such situations.</p>
+
+<img src="TEMP 32">
+
+<p>Ruby interprets this code to mean "print this string only when the condition is false". Notice that here we see very different syntax than before. Instead of wrapping a code block between an <code>if</code> and an <code>end</code>, Ruby is able to execute this code using only one line. And in case you are wondering, of COURSE we can use this syntax with other conditionals.</p>
+
+<img src="TEMP 33">
+
+<p>Here we see our standard <code>if</code> conditional in this new form. This is a great example of how relaxed syntax rules allow Ruby to be flexible in accomodating to your needs.</p>
+
+<h1>Now Your First Trial</h1>
+<h3>Succeed and you will be rewarded.</h3>
+
+<p>Follow along in the video below as I guide you through examples from this lesson as well as another mini project!</p>
+
+</body>
+</html>

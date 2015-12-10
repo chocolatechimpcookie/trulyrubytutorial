@@ -1,0 +1,233 @@
+
+# Temp 1
+
+4.times {puts 'I am but an object in a sea of Ruby code.'}
+
+# Temp 2
+
+best_actress = 'Jennifer Lawrence' unless 'Brie Larson'.include? 'son'
+
+# Temp 3
+
+puts 'underpants'.length
+
+# Temp 4
+
+puts 2 + 2
+
+# Temp 5
+
+puts 'nirvana'.capitalize
+
+# Temp 6
+
+4 + 3         #addition
+843 - 14      #subtraction
+7 * -3        #multiplication
+934765 / 5   #division
+59 % 3        #modulo division
+
+# Temp 7
+
+12 == 3 * 4    #is equal to
+-10 < 1        #less than
+5.234 > 0.3    #greater than
+7.00 <= 7.01   #less than or equal to
+9324 >= 2      #greater than or equal to
+19 != 0.3      #not equal to
+
+# Temp 8
+
+puts 'Hello world!'
+
+# Temp 9
+
+puts 'Hello ' + 'world!'
+
+# Temp 10
+
+puts 'I am Ruby, and Ruby is me.' * 3
+
+# Temp 11
+
+puts 'Mulder' * 'Scully'
+puts 8 - '2'
+puts 'Fab' + 4
+puts '6' * '7'
+
+# Temp 12
+
+puts 'Ziggy piggy!' * 4
+
+# Temp 13
+
+puts 4 * 'Ziggy piggy!'
+
+# Temp 14
+
+var_name = 'This is a string variable'
+
+days_since_outbreak = 28
+
+# Temp 15
+
+puts var_name
+
+puts days_since_outbreak
+
+# Temp 16
+
+puts var_name * 2
+
+# Temp 17
+
+days_before_rescue = days_since_outbreak + 31
+
+puts days_before_rescue
+
+# Temp 18
+
+name = 'Jon Snow'
+age = 20
+father = 'Ned Stark'
+home = 'Winterfell'
+title = 'Lord Commander'
+num_of_brothers = 1
+num_of_sisters = 2
+
+puts "Let's talk about #{name}."
+puts "He is the son of #{father}, former lord of #{home}."
+puts "He's #{age} years old."
+puts "Actually that's pretty old for Westeros."
+puts "He was promoted to #{title} of the Watch last I heard. "
+puts "I hope #{title} #{name} and his #{num_of_brothers + num_of_sisters} siblings get to see #{home} again."
+
+# Temp 19
+
+color = 'orange'
+puts "My favorite color is #{color}"
+
+# Temp 20
+
+puts 'I want to believe.'.length
+
+# Temp 21
+
+email.greeting
+
+email.greeting.salutation
+
+
+
+# Temp 22
+
+var1 = 5
+var2 = '5'
+
+puts var1 + var2
+
+# Temp 23
+
+puts var1 + var2.to_i
+
+puts var1.to_s + var2
+
+# Temp 24
+
+puts "What is your name?"
+
+name = gets
+
+puts "I've always thought #{name} was a cute name."
+
+# Temp 25
+
+puts "What is your name?"
+
+name = gets.chomp
+
+puts "I've always thought #{name} was a cute name."
+
+# Temp 26
+
+puts "What's your first name?"
+first_name = gets.chomp
+first_name.capitalize!
+puts "So that was #{first_name}, right?"
+
+puts "What's your last name?"
+last_name = gets.chomp
+last_name.capitalize!
+puts "#{last_name}? Did I get that right?"
+
+puts "What city do you live in?"
+city = gets.chomp
+city.capitalize!
+puts "And you live in #{city}?"
+
+puts "What state is that in? (use postal abbreviation)"
+state = gets.chomp
+state.upcase!
+puts "Ok so your name is #{first_name} #{last_name} and you live in #{city}, #{state}?"
+puts "Good now get out of my house!"
+
+# Temp 27
+
+bruce_wayne = 'batman'
+
+puts bruce_wayne
+puts bruce_wayne.capitalize
+puts bruce_wayne
+
+# Temp 28
+
+edward_nigma = 'riddler'
+puts edward_nigma
+puts edward_nigma.capitalize!
+puts edward_nigma
+
+# Temp 29
+
+puts "Have you considered where you are going to code for eternity?"
+answer = gets.chomp
+if answer == 'yes'
+  puts "Remember Ruby is there as your guide."
+end
+
+# Temp 30
+
+if 3 > 4
+  puts 'Duh-doi!'
+else
+  puts 'Duh! Duh-doi!'
+end
+
+# Temp 31
+
+x = 4
+y = 9
+
+if x < y
+  puts "x is less than y!"
+elsif y < x
+  puts "y is less than x!"
+else
+  puts "y is equal to x!"
+end
+
+# Temp 32
+
+hungry = false
+puts "I'm so full!" unless hungry
+
+# Temp 33
+
+puts 'Obviously' if 4 > .2
+
+# Temp 34
+
+!false          #negation
+true && true    #conjuction
+true || false   #disjunction
+
+
