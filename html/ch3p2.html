@@ -76,18 +76,52 @@
 	<div class="col-xs-12">
 		<h3 class="page-header"><b class="center">Chapter 3: Part 2</b></h3>
 	
+		<h3 class="page-header">Class Inheritence</h3>
+
+		<p>Like in other object-oriented languages, <strong>inheritance</strong> is how have one class take on the methods and attributes of another class. Inheritence is often said to express <strong>is-a</strong> relationships. Below </p>
 	
+		<div class="codeblock"><code class="code">
+			class Sedan < Car<br>
+			end
+		</code></div><br><br>
+
+		<p>In the above example we create a new class <code>Sedan</code> that inherits from the <code>Car</code> class from our previous examples. The <code><</code> inheritence operator is another one of myriad beautifully simple syntaxes Ruby has to offer. Most languages require lots of cumbersome code to achieve things like inheritance. Often this is to maximize machine efficiency. Ruby uses a very different approach. Modern computers are lightyears ahead of where they were when other object-oriented languages like <strong>C++</strong>(1983), <strong>Python</strong>(1991), and <strong>Java</strong>(1995) were developed. Though Ruby was developed in 1995 as well, the intention was to create a language that, though less efficient than other languages, is fun to use. Today, the kinds of differences in efficiency between Ruby and other languages are nearly meaningless in real life usage since computers are so incredibly powerful.</p>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		<h3 class="page-header">Modules</h3>
+
+		<p>In Ruby, <strong>modules</strong> are containers that hold methods and constants. Ruby is chock full of tools we want to use, but we don't want code littered all over our interpreter. So we store lots of tools in modules and only use them when we need to access their the constants or methods. Modules are like classes that <strong>don't</strong> have instances and <strong>don't</strong> have sub-modules (the way a class has subclasses). Modules even use the same naming convention as classes, upper CamelCase with no underscores. Take a look at the syntax:</p>
+
+		<div class="codeblock"><code class="code">
+			module MyModule<br>
+			&nbsp;&nbsp;MY_CONSTANT = 0<br>
+			end
+		</code></div><br><br>
+
+		<p> In this example our module <code>MyModule</code> has a constant <code>MY_CONSTANT</code>. <strong>Constants</strong> are references to objects that don't change.  Above we are referring to the <code>0</code> object. The constant syntax requires names in all caps with underscores if there are multiple words. Being the flexible language it is, Ruby <em>does</em> allow you to change the value of constants but it'll warn you.</p>
+
+		<h3 class="page-header">Mixins</h3>
+
+		<p></p>
+
+		<div class="codeblock"><code class="code">
+			module Action<br>
+			&nbsp;&nbsp;def whistle<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;puts "Come forth! March to the Capitol!"<br>
+			&nbsp;&nbsp;end<br>
+			end<br><br>
+
+			class Mockingjay<br>
+			&nbsp;&nbsp;include Action<br>
+			&nbsp;&nbsp;attr_reader :color<br>
+			&nbsp;&nbsp;def initialize(district)<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;@district = district<br>
+			&nbsp;&nbsp;end<br>
+			end<br><br>
+			katniss = Mockingjay.new(12)<br><br>
+			katniss.whistle
+		</code></div><br><br>
+
+		<p>Here we are able to borrow the <code>.whistle</code> method from the <code>Action</code> module for use in our <code>Mockingjay</code> class. See how we can call that method from any <code>Mockingjay</code> object we create. Pretty cool!</p>
 	
 		<div class="jumbotron"><h2 class="center"><a class="link_lesson midred" href="ch3p3.html">Come my child to Chapter 3: <i class="lightred">Part 3</i></a></h2></div>
 
