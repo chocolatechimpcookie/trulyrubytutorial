@@ -81,7 +81,6 @@
 
 		<p></p>
 
-		<h3 class="page-header">Power Through Simplicity</h3>
 
 		<p>Compare these two implementations of the ubiquitous <code>mergesort</code> algorithm. First we have the Java code:</p>
 
@@ -91,31 +90,31 @@
 			import java.util.Iterator;<br><br>
 
 			public class Merge{<br>
-			&nbsp;&nbsp;public static <E extends Comparable<? super E>> List<E> mergeSort(List<E> m){<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;if(m.size() <= 1) return m;<br><br>
+			&nbsp;&nbsp;public static &lt;E extends Comparable&lt;? super E&gt;&gt; List&lt;E&gt; mergeSort(List&lt;E&gt; m){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;if(m.size() &lt;= 1) return m;<br><br>
 
-			&nbsp;&nbsp;&nbsp;&nbsp;int middle = m.size() / 2;<Br>
-			&nbsp;&nbsp;&nbsp;&nbsp;List<E> left = m.subList(0, middle);<br>
-				&nbsp;&nbsp;&nbsp;&nbsp;List<E> right = m.subList(middle, m.size());<br><br>
+			&nbsp;&nbsp;&nbsp;&nbsp;int middle = m.size() / 2;<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;List&lt;E&gt; left = m.subList(0, middle);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;List&lt;E&gt; right = m.subList(middle, m.size());<br><br>
 					&nbsp;&nbsp;&nbsp;&nbsp;right = mergeSort(right);<br>
 					&nbsp;&nbsp;&nbsp;&nbsp;left = mergeSort(left);<br>
-					&nbsp;&nbsp;&nbsp;&nbsp;List<E> result = merge(left, right);<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;List&lt;E&gt; result = merge(left, right);<br><br>
 
 						&nbsp;&nbsp;&nbsp;&nbsp;return result;<br>
 						&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
 
-						&nbsp;&nbsp;&nbsp;&nbsp;public static <E extends Comparable<? super E>> List<E> merge(List<E> left, List<E> right){<br>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List<E> result = new ArrayList<E>();<br>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iterator<E> it1 = left.iterator();<br>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iterator<E> it2 = right.iterator();<br><br>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E x = it1.next();<Br>
+						&nbsp;&nbsp;&nbsp;&nbsp;public static &lt;E extends Comparable&lt;? super E&gt;&gt; List&lt;E> merge(List&lt;E&gt; left, List&lt;E&gt; right){<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List&lt;E&gt; result = new ArrayList&lt;E&gt;();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iterator&lt;E&gt; it1 = left.iterator();<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iterator&lt;E&gt; it2 = right.iterator();<br><br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E x = it1.next();<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E y = it2.next();<br>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (true){<Br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (true){<br>
 
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(x.compareTo(y) <= 0){<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(x.compareTo(y) &lt;= 0){<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.add(x);<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(it1.hasNext()){<br>
-										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = it1.next();<Br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = it1.next();<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.add(y);<br>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(it2.hasNext()){<br>
@@ -140,12 +139,13 @@
 										&nbsp;&nbsp;&nbsp;&nbsp;}<br>
 										}
 		</div></code><br><br>
+		<h3 class="page-header">Power Through Simplicity</h3>
 
 		<p>I am truly sorry for making you scroll through all of that. I'll understand if you hate me, especially after I show you the Ruby implementation.</p>
 
 		<div class="codeblock"><code class="code">
 			def merge_sort(m)<br>
-			&nbsp;&nbsp;return m if m.length <= 1<br><br>
+			&nbsp;&nbsp;return m if m.length &lt;= 1<br><br>
 
 			&nbsp;&nbsp;middle = m.length / 2<br>
 			&nbsp;&nbsp;left = merge_sort(m[0...middle])<br>
@@ -155,7 +155,7 @@
 			def merge(left, right)<br>
 			&nbsp;&nbsp;result = []<br>
 			&nbsp;&nbsp;until left.empty? || right.empty?<br>
-			&nbsp;&nbsp;&nbsp;&nbsp;result << (left.first <= right.first ? left.shift : right.shift)<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;result &lt;&lt; (left.first <= right.first ? left.shift : right.shift)<br>
 			&nbsp;&nbsp;end<br>
 			&nbsp;&nbsp;result + left + right<br>
 			end
@@ -187,12 +187,16 @@
 
 		<p>There are many, many different tutorials on the Ruby on Rails framework available through a simple erm...something search, and I encourage you to learn more wherever you can! Before your final challenge I have to tell you a secret:</p>
 
-		<h3 class="page-header">The Secret Is..s <small>You've Been Truly Ruby All Along!</small></h3>
+		<h3 class="page-header">The Secret Is.. <small>You've Been Truly Ruby All Along!</small></h3>
 
 		<p>That's right. By starting this tutorial you've shown that you are open minded to new ways of writing your programs. True Code Enlightenment comes from searching for best tools to write your best programs, and now that you've finished your journey with us, you've got a powerful tool in Ruby.</p>
 
 		<p>Your final challenge is to join with me in the video below as I explore more of the possible applications of Ruby. Thanks for taking this journey with us!</p>
 	
+	
+		<iframe width="420" height="345" class="center"
+			src="http://www.youtube.com/embed/ZUaV0Gdwiq0">
+		  </iframe><br><br>
 	<div class="jumbotron"><h2 class="center"><a class="link_lesson midred" href="about.html">Go forth and tell the world how you are TRULY RUBY. Please take a look at our <em>About</em> page.</a></h2></div>
 
 	
