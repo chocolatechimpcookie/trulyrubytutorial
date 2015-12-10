@@ -77,19 +77,123 @@
 	<div class="col-xs-12">
 		<h3 class="page-header"><b class="center">Chapter 3: Part 3</b></h3>
 	
+		<h3 class="page-header">Your Journey Has Ended<br><small>As You Begin Another</small></h3>
+
+		<p></p>
+
+		<h3 class="page-header">Power Through Simplicity</h3>
+
+		<p>Compare these two implementations of the ubiquitous <code>mergesort</code> algorithm. First we have the Java code:</p>
+
+		<div class="codeblock"><code class="code">
+			import java.util.List;<br>
+			import java.util.ArrayList;<br>
+			import java.util.Iterator;<br><br>
+
+			public class Merge{<br>
+			&nbsp;&nbsp;public static <E extends Comparable<? super E>> List<E> mergeSort(List<E> m){<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;if(m.size() <= 1) return m;<br><br>
+
+			&nbsp;&nbsp;&nbsp;&nbsp;int middle = m.size() / 2;<Br>
+			&nbsp;&nbsp;&nbsp;&nbsp;List<E> left = m.subList(0, middle);<br>
+				&nbsp;&nbsp;&nbsp;&nbsp;List<E> right = m.subList(middle, m.size());<br><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;right = mergeSort(right);<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;left = mergeSort(left);<br>
+					&nbsp;&nbsp;&nbsp;&nbsp;List<E> result = merge(left, right);<br><br>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;return result;<br>
+						&nbsp;&nbsp;&nbsp;&nbsp;}<br><br>
+
+						&nbsp;&nbsp;&nbsp;&nbsp;public static <E extends Comparable<? super E>> List<E> merge(List<E> left, List<E> right){<br>
+							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;List<E> result = new ArrayList<E>();<br>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iterator<E> it1 = left.iterator();<br>
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Iterator<E> it2 = right.iterator();<br><br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E x = it1.next();<Br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;E y = it2.next();<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (true){<Br>
+
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(x.compareTo(y) <= 0){<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.add(x);<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(it1.hasNext()){<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x = it1.next();<Br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.add(y);<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while(it2.hasNext()){<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.add(it2.next());<br>
+										}<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+										}<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.add(y);<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(it2.hasNext()){<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y = it2.next();<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.add(x);<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;while (it1.hasNext()){<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;result.add(it1.next());<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return result;<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;}<br>
+										}
+		</code></div><br><br>
+
+		<p>I am truly sorry for making you scroll through all of that. I'll understand if you hate me, especially after I show you the Ruby implementation.</p>
+
+		<div class="codeblock"><code class="code">
+			def merge_sort(m)<br>
+			&nbsp;&nbsp;return m if m.length <= 1<br><br>
+
+			&nbsp;&nbsp;middle = m.length / 2<br>
+			&nbsp;&nbsp;left = merge_sort(m[0...middle])<br>
+			&nbsp;&nbsp;right = merge_sort(m[middle..-1])<br>
+			&nbsp;&nbsp;merge(left, right)<br>
+			end<br><br>
+			def merge(left, right)<br>
+			&nbsp;&nbsp;result = []<br>
+			&nbsp;&nbsp;until left.empty? || right.empty?<br>
+			&nbsp;&nbsp;&nbsp;&nbsp;result << (left.first <= right.first ? left.shift : right.shift)<br>
+			&nbsp;&nbsp;end<br>
+			&nbsp;&nbsp;result + left + right<br>
+			end
+		</code></div><br><br>
+
+		<p>Granted, the Java version of this method represents a fully compilable <code>mergesort</code> program since Ruby is an interpreted language, but the difference is still staggering. Plus, most Ruby interpreters compile to either C or Java and are capable of doing most of that heavily lifting automatically. So though there may be a lot more going on under the hood in the Ruby implementation, from the point of view there is less actual code to write. Less code means more time for debugging, refactoring, and getting creative and adventurous with your programs (and maybe a little extra time to soak in the bath).</p>
+
+		<h3 class="page-header">The Rails Framework</h3>
+
+		<p><em>Rails</em> or <em>Ruby on Rails</em> is a <strong>model-view-controller</strong> (MVC) framework for web apps written using Ruby. Rails sets up defaults for web pages, web services, and database interaction using widely accepted web standards. Many popular websites use Ruby on Rails, chief among them Twitter. Other popular sites that use Rails are Airbnb, GitHub, Hulu, and Basecamp. Here is a snippet of the Rails sourcecode available for download on GitHub:</p>
+
+		<div class="codeblock"><code class="code">
+			def create_record(attributes, raise_error = false)<br>
+			&nbsp;&nbsp;record = build_record(attributes)<br>
+			&nbsp;&nbsp;yield(record) if block_given?<br>
+			&nbsp;&nbsp;saved = record.save<br>
+			&nbsp;&nbsp;set_new_record(record)<br>
+			&nbsp;&nbsp;raise RecordInvalid.new(record) if !saved && raise_error<br>
+			&nbsp;&nbsp;record<br>
+			end
+		</code></div><br><br>
+
+		<p>As you can see, the minimal nature of Ruby code allows you to perform functions with less lines of code.</p>
+
+		<h3 class="page-header">Conventions Are Powerful<br><small>Rails Models</small></h3>
+
+		<p>A model in Rails maps to a table in a database and to a Ruby file. As an example, a class <code>Tweet</code> will be defined in a file named <code>tweet.rb</code>(<code>.rb</code> being the Ruby file extension). The class is then linked to a table named <code>'tweets'</code> in the database. This is another convention in Ruby that you can choose to ignore. However, if you <em>do</em> choose to adhere to the convention, all those connections mentioned above happen <em>automatically</em>!</p>
+		<p>Ruby on Rails includes tools to provide a basic development environment 'out-of-the-box'. For example, it can construct models and views needed for a basic website and includes a simple web server and a build system.</p>
+
+		<p>There are many, many different tutorials on the Ruby on Rails framework available through a simple erm...something search, and I encourage you to learn more wherever you can! Before your final challenge I have to tell you a secret:</p>
+
+		<h3 class="page-header">The Secret Is<br><small>You've Been Truly Ruby All Along!</small></h3>
+
+		<p>That's right. By starting this tutorial you've shown that you are open minded to new ways of writing your programs. True Code Enlightenment comes from searching for best tools to write your best programs, and now that you've finished your journey with us, you've got a powerful tool in Ruby.</p>
+
+		<p>Your final challenge is to join with me in the video below as I explore more of the possible applications of Ruby. Thanks for taking this journey with us!</p>
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<div class="jumbotron"><h2 class="center"><a class="link_lesson midred" href="about.html">You are now have earned the title of TRULY RUBY. Please take a look at our <em>About</em> page.</a></h2></div>
+	<div class="jumbotron"><h2 class="center"><a class="link_lesson midred" href="about.html">Go forth and tell the world how you are TRULY RUBY. Please take a look at our <em>About</em> page.</a></h2></div>
 
 	
 	</div>		
