@@ -1,5 +1,61 @@
 /* What exactly do I want this to look like? */
 
+body
+{
+ display: none;   
+}
+
+@media (min-width: 0px)
+{
+    .smaller_menu .nav > li
+    {
+        width:100%;
+                /*width:auto !important;*/
+
+    }
+    
+    .larger_menu
+    {
+     display:none;   
+    }
+    /**/
+    /*.nav*/
+    /*{*/
+    /*    width: 90%;*/
+    /*}*/
+    
+}
+
+/*xs*/
+@media screen and (min-width:480px)
+{
+
+}
+
+
+
+@media screen and (min-width:768px)
+{
+    .smaller_menu 
+    {
+        display:none;
+                /*width:auto !important;*/
+
+    }
+    
+    .larger_menu
+    {
+     display:inherit;   
+    }
+}
+    
+/*    this works but makes them all normal*/
+    /*.nav > li*/
+    /*{*/
+    /*            width:auto!important;;*/
+    /**/
+    /**/
+    /*}*/
 .adkins
 {
     height: 600px;
@@ -13,7 +69,7 @@
 {
     background-color:#EBEBE4;
     width:auto;
-    overflow:scroll;    
+    /*overflow:scroll;    */
     padding:11px;
 }
 
@@ -37,7 +93,7 @@
 	border:0;
 	background:#E2E2DB;
 	z-index:2;
-	width:auto;
+	/*width:auto;*/
 }
  
 .top_menu li
